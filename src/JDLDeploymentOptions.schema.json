@@ -1,0 +1,1739 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The Root Schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "required": [
+        "deploymentOptions"
+    ],
+    "properties": {
+        "deploymentOptions": {
+            "$id": "#/properties/deploymentOptions",
+            "type": "object",
+            "title": "The Deploymentoptions Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "ingressDomain": {
+                        "option": {
+                            "values": [
+                                "\"Ingress\""
+                            ],
+                            "name": "ingressDomain",
+                            "parseType": "AnyLiteral",
+                            "baseType": "STRING"
+                        }
+                    },
+                    "gatewayType": {
+                        "option": {
+                            "values": [
+                                "zuul",
+                                "traefik"
+                            ],
+                            "name": "gatewayType",
+                            "parseType": "Literal",
+                            "baseType": "STRING"
+                        }
+                    },
+                    "deploymentType": {
+                        "option": {
+                            "baseType": "STRING",
+                            "values": [
+                                "docker-compose",
+                                "kubernetes",
+                                "openshift"
+                            ],
+                            "name": "deploymentType",
+                            "parseType": "Literal"
+                        }
+                    },
+                    "serviceDiscoveryType": {
+                        "option": {
+                            "values": [
+                                "eureka",
+                                "consul",
+                                "no"
+                            ],
+                            "name": "serviceDiscoveryType",
+                            "parseType": "Literal",
+                            "baseType": "STRING"
+                        }
+                    },
+                    "consoleOptions": {
+                        "option": {
+                            "baseType": "LIST",
+                            "values": [
+                                "curator",
+                                "zipkin"
+                            ],
+                            "name": "consoleOptions",
+                            "parseType": "ListOfLiterals"
+                        }
+                    },
+                    "dockerRepositoryName": {
+                        "option": {
+                            "baseType": "STRING",
+                            "values": [],
+                            "name": "dockerRepositoryName",
+                            "parseType": "String"
+                        }
+                    },
+                    "openshiftNamespace": {
+                        "option": {
+                            "values": [
+                                "default"
+                            ],
+                            "name": "openshiftNamespace",
+                            "parseType": "AnyLiteral",
+                            "baseType": "STRING"
+                        }
+                    },
+                    "directoryPath": {
+                        "option": {
+                            "baseType": "STRING",
+                            "values": [
+                                "\"../\""
+                            ],
+                            "name": "directoryPath",
+                            "parseType": "AnyLiteral"
+                        }
+                    },
+                    "appsFolders": {
+                        "option": {
+                            "name": "appsFolders",
+                            "parseType": "ListOfAnyLiterals",
+                            "baseType": "LIST",
+                            "values": []
+                        }
+                    },
+                    "dockerPushCommand": {
+                        "option": {
+                            "baseType": "STRING",
+                            "values": [
+                                "\"docker push\""
+                            ],
+                            "name": "dockerPushCommand",
+                            "parseType": "AnyLiteral"
+                        }
+                    },
+                    "clusteredDbApps": {
+                        "option": {
+                            "baseType": "LIST",
+                            "values": [],
+                            "name": "clusteredDbApps",
+                            "parseType": "ListOfAnyLiterals"
+                        }
+                    },
+                    "kubernetesServiceType": {
+                        "option": {
+                            "baseType": "STRING",
+                            "values": [
+                                "LoadBalancer",
+                                "NodePort",
+                                "Ingress"
+                            ],
+                            "name": "kubernetesServiceType",
+                            "parseType": "Literal"
+                        }
+                    },
+                    "istio": {
+                        "option": {
+                            "baseType": "BOOLEAN",
+                            "values": [
+                                "true",
+                                "false"
+                            ],
+                            "name": "istio",
+                            "parseType": "Boolean"
+                        }
+                    },
+                    "monitoring": {
+                        "option": {
+                            "values": [
+                                "no",
+                                "elk",
+                                "prometheus"
+                            ],
+                            "name": "monitoring",
+                            "parseType": "Literal",
+                            "baseType": "STRING"
+                        }
+                    },
+                    "storageType": {
+                        "option": {
+                            "baseType": "STRING",
+                            "values": [
+                                "ephemeral",
+                                "persistent"
+                            ],
+                            "name": "storageType",
+                            "parseType": "Literal"
+                        }
+                    },
+                    "kubernetesNamespace": {
+                        "option": {
+                            "baseType": "STRING",
+                            "values": [
+                                "default"
+                            ],
+                            "name": "kubernetesNamespace",
+                            "parseType": "AnyLiteral"
+                        }
+                    }
+                }
+            ],
+            "required": [
+                "dockerPushCommand",
+                "kubernetesNamespace",
+                "serviceDiscoveryType",
+                "clusteredDbApps",
+                "appsFolders",
+                "monitoring",
+                "istio",
+                "kubernetesServiceType",
+                "ingressDomain",
+                "dockerRepositoryName",
+                "deploymentType",
+                "gatewayType",
+                "directoryPath",
+                "consoleOptions",
+                "openshiftNamespace",
+                "storageType"
+            ],
+            "properties": {
+                "dockerPushCommand": {
+                    "$id": "#/properties/deploymentOptions/properties/dockerPushCommand",
+                    "type": "object",
+                    "title": "The Dockerpushcommand Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "option": {
+                                "name": "dockerPushCommand",
+                                "parseType": "AnyLiteral",
+                                "baseType": "STRING",
+                                "values": [
+                                    "\"docker push\""
+                                ]
+                            }
+                        }
+                    ],
+                    "required": [
+                        "option"
+                    ],
+                    "properties": {
+                        "option": {
+                            "$id": "#/properties/deploymentOptions/properties/dockerPushCommand/properties/option",
+                            "type": "object",
+                            "title": "The Option Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": {},
+                            "examples": [
+                                {
+                                    "baseType": "STRING",
+                                    "values": [
+                                        "\"docker push\""
+                                    ],
+                                    "name": "dockerPushCommand",
+                                    "parseType": "AnyLiteral"
+                                }
+                            ],
+                            "required": [
+                                "name",
+                                "baseType",
+                                "parseType",
+                                "values"
+                            ],
+                            "properties": {
+                                "name": {
+                                    "$id": "#/properties/deploymentOptions/properties/dockerPushCommand/properties/option/properties/name",
+                                    "type": "string",
+                                    "title": "The Name Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "dockerPushCommand"
+                                    ]
+                                },
+                                "baseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/dockerPushCommand/properties/option/properties/baseType",
+                                    "type": "string",
+                                    "title": "The Basetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "STRING"
+                                    ]
+                                },
+                                "parseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/dockerPushCommand/properties/option/properties/parseType",
+                                    "type": "string",
+                                    "title": "The Parsetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "AnyLiteral"
+                                    ]
+                                },
+                                "values": {
+                                    "$id": "#/properties/deploymentOptions/properties/dockerPushCommand/properties/option/properties/values",
+                                    "type": "array",
+                                    "title": "The Values Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": [],
+                                    "items": {
+                                        "$id": "#/properties/deploymentOptions/properties/dockerPushCommand/properties/option/properties/values/items",
+                                        "type": "string",
+                                        "title": "The Items Schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "\"docker push\""
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "kubernetesNamespace": {
+                    "$id": "#/properties/deploymentOptions/properties/kubernetesNamespace",
+                    "type": "object",
+                    "title": "The Kubernetesnamespace Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "option": {
+                                "baseType": "STRING",
+                                "values": [
+                                    "default"
+                                ],
+                                "name": "kubernetesNamespace",
+                                "parseType": "AnyLiteral"
+                            }
+                        }
+                    ],
+                    "required": [
+                        "option"
+                    ],
+                    "properties": {
+                        "option": {
+                            "$id": "#/properties/deploymentOptions/properties/kubernetesNamespace/properties/option",
+                            "type": "object",
+                            "title": "The Option Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": {},
+                            "examples": [
+                                {
+                                    "baseType": "STRING",
+                                    "values": [
+                                        "default"
+                                    ],
+                                    "name": "kubernetesNamespace",
+                                    "parseType": "AnyLiteral"
+                                }
+                            ],
+                            "required": [
+                                "name",
+                                "baseType",
+                                "parseType",
+                                "values"
+                            ],
+                            "properties": {
+                                "name": {
+                                    "$id": "#/properties/deploymentOptions/properties/kubernetesNamespace/properties/option/properties/name",
+                                    "type": "string",
+                                    "title": "The Name Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "kubernetesNamespace"
+                                    ]
+                                },
+                                "baseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/kubernetesNamespace/properties/option/properties/baseType",
+                                    "type": "string",
+                                    "title": "The Basetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "STRING"
+                                    ]
+                                },
+                                "parseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/kubernetesNamespace/properties/option/properties/parseType",
+                                    "type": "string",
+                                    "title": "The Parsetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "AnyLiteral"
+                                    ]
+                                },
+                                "values": {
+                                    "$id": "#/properties/deploymentOptions/properties/kubernetesNamespace/properties/option/properties/values",
+                                    "type": "array",
+                                    "title": "The Values Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": [],
+                                    "items": {
+                                        "$id": "#/properties/deploymentOptions/properties/kubernetesNamespace/properties/option/properties/values/items",
+                                        "type": "string",
+                                        "title": "The Items Schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "default"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "serviceDiscoveryType": {
+                    "$id": "#/properties/deploymentOptions/properties/serviceDiscoveryType",
+                    "type": "object",
+                    "title": "The Servicediscoverytype Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "option": {
+                                "baseType": "STRING",
+                                "values": [
+                                    "eureka",
+                                    "consul",
+                                    "no"
+                                ],
+                                "name": "serviceDiscoveryType",
+                                "parseType": "Literal"
+                            }
+                        }
+                    ],
+                    "required": [
+                        "option"
+                    ],
+                    "properties": {
+                        "option": {
+                            "$id": "#/properties/deploymentOptions/properties/serviceDiscoveryType/properties/option",
+                            "type": "object",
+                            "title": "The Option Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": {},
+                            "examples": [
+                                {
+                                    "baseType": "STRING",
+                                    "values": [
+                                        "eureka",
+                                        "consul",
+                                        "no"
+                                    ],
+                                    "name": "serviceDiscoveryType",
+                                    "parseType": "Literal"
+                                }
+                            ],
+                            "required": [
+                                "name",
+                                "baseType",
+                                "parseType",
+                                "values"
+                            ],
+                            "properties": {
+                                "name": {
+                                    "$id": "#/properties/deploymentOptions/properties/serviceDiscoveryType/properties/option/properties/name",
+                                    "type": "string",
+                                    "title": "The Name Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "serviceDiscoveryType"
+                                    ]
+                                },
+                                "baseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/serviceDiscoveryType/properties/option/properties/baseType",
+                                    "type": "string",
+                                    "title": "The Basetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "STRING"
+                                    ]
+                                },
+                                "parseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/serviceDiscoveryType/properties/option/properties/parseType",
+                                    "type": "string",
+                                    "title": "The Parsetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Literal"
+                                    ]
+                                },
+                                "values": {
+                                    "$id": "#/properties/deploymentOptions/properties/serviceDiscoveryType/properties/option/properties/values",
+                                    "type": "array",
+                                    "title": "The Values Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": [],
+                                    "items": {
+                                        "$id": "#/properties/deploymentOptions/properties/serviceDiscoveryType/properties/option/properties/values/items",
+                                        "type": "string",
+                                        "title": "The Items Schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "eureka",
+                                            "consul",
+                                            "no"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "clusteredDbApps": {
+                    "$id": "#/properties/deploymentOptions/properties/clusteredDbApps",
+                    "type": "object",
+                    "title": "The Clustereddbapps Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "option": {
+                                "name": "clusteredDbApps",
+                                "parseType": "ListOfAnyLiterals",
+                                "baseType": "LIST",
+                                "values": []
+                            }
+                        }
+                    ],
+                    "required": [
+                        "option"
+                    ],
+                    "properties": {
+                        "option": {
+                            "$id": "#/properties/deploymentOptions/properties/clusteredDbApps/properties/option",
+                            "type": "object",
+                            "title": "The Option Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": {},
+                            "examples": [
+                                {
+                                    "values": [],
+                                    "name": "clusteredDbApps",
+                                    "parseType": "ListOfAnyLiterals",
+                                    "baseType": "LIST"
+                                }
+                            ],
+                            "required": [
+                                "name",
+                                "baseType",
+                                "parseType",
+                                "values"
+                            ],
+                            "properties": {
+                                "name": {
+                                    "$id": "#/properties/deploymentOptions/properties/clusteredDbApps/properties/option/properties/name",
+                                    "type": "string",
+                                    "title": "The Name Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "clusteredDbApps"
+                                    ]
+                                },
+                                "baseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/clusteredDbApps/properties/option/properties/baseType",
+                                    "type": "string",
+                                    "title": "The Basetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "LIST"
+                                    ]
+                                },
+                                "parseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/clusteredDbApps/properties/option/properties/parseType",
+                                    "type": "string",
+                                    "title": "The Parsetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "ListOfAnyLiterals"
+                                    ]
+                                },
+                                "values": {
+                                    "$id": "#/properties/deploymentOptions/properties/clusteredDbApps/properties/option/properties/values",
+                                    "type": "array",
+                                    "title": "The Values Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": []
+                                }
+                            }
+                        }
+                    }
+                },
+                "appsFolders": {
+                    "$id": "#/properties/deploymentOptions/properties/appsFolders",
+                    "type": "object",
+                    "title": "The Appsfolders Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "option": {
+                                "name": "appsFolders",
+                                "parseType": "ListOfAnyLiterals",
+                                "baseType": "LIST",
+                                "values": []
+                            }
+                        }
+                    ],
+                    "required": [
+                        "option"
+                    ],
+                    "properties": {
+                        "option": {
+                            "$id": "#/properties/deploymentOptions/properties/appsFolders/properties/option",
+                            "type": "object",
+                            "title": "The Option Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": {},
+                            "examples": [
+                                {
+                                    "baseType": "LIST",
+                                    "values": [],
+                                    "name": "appsFolders",
+                                    "parseType": "ListOfAnyLiterals"
+                                }
+                            ],
+                            "required": [
+                                "name",
+                                "baseType",
+                                "parseType",
+                                "values"
+                            ],
+                            "properties": {
+                                "name": {
+                                    "$id": "#/properties/deploymentOptions/properties/appsFolders/properties/option/properties/name",
+                                    "type": "string",
+                                    "title": "The Name Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "appsFolders"
+                                    ]
+                                },
+                                "baseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/appsFolders/properties/option/properties/baseType",
+                                    "type": "string",
+                                    "title": "The Basetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "LIST"
+                                    ]
+                                },
+                                "parseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/appsFolders/properties/option/properties/parseType",
+                                    "type": "string",
+                                    "title": "The Parsetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "ListOfAnyLiterals"
+                                    ]
+                                },
+                                "values": {
+                                    "$id": "#/properties/deploymentOptions/properties/appsFolders/properties/option/properties/values",
+                                    "type": "array",
+                                    "title": "The Values Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": []
+                                }
+                            }
+                        }
+                    }
+                },
+                "monitoring": {
+                    "$id": "#/properties/deploymentOptions/properties/monitoring",
+                    "type": "object",
+                    "title": "The Monitoring Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "option": {
+                                "values": [
+                                    "no",
+                                    "elk",
+                                    "prometheus"
+                                ],
+                                "name": "monitoring",
+                                "parseType": "Literal",
+                                "baseType": "STRING"
+                            }
+                        }
+                    ],
+                    "required": [
+                        "option"
+                    ],
+                    "properties": {
+                        "option": {
+                            "$id": "#/properties/deploymentOptions/properties/monitoring/properties/option",
+                            "type": "object",
+                            "title": "The Option Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": {},
+                            "examples": [
+                                {
+                                    "values": [
+                                        "no",
+                                        "elk",
+                                        "prometheus"
+                                    ],
+                                    "name": "monitoring",
+                                    "parseType": "Literal",
+                                    "baseType": "STRING"
+                                }
+                            ],
+                            "required": [
+                                "name",
+                                "baseType",
+                                "parseType",
+                                "values"
+                            ],
+                            "properties": {
+                                "name": {
+                                    "$id": "#/properties/deploymentOptions/properties/monitoring/properties/option/properties/name",
+                                    "type": "string",
+                                    "title": "The Name Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "monitoring"
+                                    ]
+                                },
+                                "baseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/monitoring/properties/option/properties/baseType",
+                                    "type": "string",
+                                    "title": "The Basetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "STRING"
+                                    ]
+                                },
+                                "parseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/monitoring/properties/option/properties/parseType",
+                                    "type": "string",
+                                    "title": "The Parsetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Literal"
+                                    ]
+                                },
+                                "values": {
+                                    "$id": "#/properties/deploymentOptions/properties/monitoring/properties/option/properties/values",
+                                    "type": "array",
+                                    "title": "The Values Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": [],
+                                    "items": {
+                                        "$id": "#/properties/deploymentOptions/properties/monitoring/properties/option/properties/values/items",
+                                        "type": "string",
+                                        "title": "The Items Schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "no",
+                                            "elk",
+                                            "prometheus"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "istio": {
+                    "$id": "#/properties/deploymentOptions/properties/istio",
+                    "type": "object",
+                    "title": "The Istio Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "option": {
+                                "baseType": "BOOLEAN",
+                                "values": [
+                                    "true",
+                                    "false"
+                                ],
+                                "name": "istio",
+                                "parseType": "Boolean"
+                            }
+                        }
+                    ],
+                    "required": [
+                        "option"
+                    ],
+                    "properties": {
+                        "option": {
+                            "$id": "#/properties/deploymentOptions/properties/istio/properties/option",
+                            "type": "object",
+                            "title": "The Option Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": {},
+                            "examples": [
+                                {
+                                    "values": [
+                                        "true",
+                                        "false"
+                                    ],
+                                    "name": "istio",
+                                    "parseType": "Boolean",
+                                    "baseType": "BOOLEAN"
+                                }
+                            ],
+                            "required": [
+                                "name",
+                                "baseType",
+                                "parseType",
+                                "values"
+                            ],
+                            "properties": {
+                                "name": {
+                                    "$id": "#/properties/deploymentOptions/properties/istio/properties/option/properties/name",
+                                    "type": "string",
+                                    "title": "The Name Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "istio"
+                                    ]
+                                },
+                                "baseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/istio/properties/option/properties/baseType",
+                                    "type": "string",
+                                    "title": "The Basetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "BOOLEAN"
+                                    ]
+                                },
+                                "parseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/istio/properties/option/properties/parseType",
+                                    "type": "string",
+                                    "title": "The Parsetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Boolean"
+                                    ]
+                                },
+                                "values": {
+                                    "$id": "#/properties/deploymentOptions/properties/istio/properties/option/properties/values",
+                                    "type": "array",
+                                    "title": "The Values Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": [],
+                                    "items": {
+                                        "$id": "#/properties/deploymentOptions/properties/istio/properties/option/properties/values/items",
+                                        "type": "string",
+                                        "title": "The Items Schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "true",
+                                            "false"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "kubernetesServiceType": {
+                    "$id": "#/properties/deploymentOptions/properties/kubernetesServiceType",
+                    "type": "object",
+                    "title": "The Kubernetesservicetype Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "option": {
+                                "baseType": "STRING",
+                                "values": [
+                                    "LoadBalancer",
+                                    "NodePort",
+                                    "Ingress"
+                                ],
+                                "name": "kubernetesServiceType",
+                                "parseType": "Literal"
+                            }
+                        }
+                    ],
+                    "required": [
+                        "option"
+                    ],
+                    "properties": {
+                        "option": {
+                            "$id": "#/properties/deploymentOptions/properties/kubernetesServiceType/properties/option",
+                            "type": "object",
+                            "title": "The Option Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": {},
+                            "examples": [
+                                {
+                                    "baseType": "STRING",
+                                    "values": [
+                                        "LoadBalancer",
+                                        "NodePort",
+                                        "Ingress"
+                                    ],
+                                    "name": "kubernetesServiceType",
+                                    "parseType": "Literal"
+                                }
+                            ],
+                            "required": [
+                                "name",
+                                "baseType",
+                                "parseType",
+                                "values"
+                            ],
+                            "properties": {
+                                "name": {
+                                    "$id": "#/properties/deploymentOptions/properties/kubernetesServiceType/properties/option/properties/name",
+                                    "type": "string",
+                                    "title": "The Name Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "kubernetesServiceType"
+                                    ]
+                                },
+                                "baseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/kubernetesServiceType/properties/option/properties/baseType",
+                                    "type": "string",
+                                    "title": "The Basetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "STRING"
+                                    ]
+                                },
+                                "parseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/kubernetesServiceType/properties/option/properties/parseType",
+                                    "type": "string",
+                                    "title": "The Parsetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Literal"
+                                    ]
+                                },
+                                "values": {
+                                    "$id": "#/properties/deploymentOptions/properties/kubernetesServiceType/properties/option/properties/values",
+                                    "type": "array",
+                                    "title": "The Values Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": [],
+                                    "items": {
+                                        "$id": "#/properties/deploymentOptions/properties/kubernetesServiceType/properties/option/properties/values/items",
+                                        "type": "string",
+                                        "title": "The Items Schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "LoadBalancer",
+                                            "NodePort",
+                                            "Ingress"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "ingressDomain": {
+                    "$id": "#/properties/deploymentOptions/properties/ingressDomain",
+                    "type": "object",
+                    "title": "The Ingressdomain Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "option": {
+                                "values": [
+                                    "\"Ingress\""
+                                ],
+                                "name": "ingressDomain",
+                                "parseType": "AnyLiteral",
+                                "baseType": "STRING"
+                            }
+                        }
+                    ],
+                    "required": [
+                        "option"
+                    ],
+                    "properties": {
+                        "option": {
+                            "$id": "#/properties/deploymentOptions/properties/ingressDomain/properties/option",
+                            "type": "object",
+                            "title": "The Option Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": {},
+                            "examples": [
+                                {
+                                    "values": [
+                                        "\"Ingress\""
+                                    ],
+                                    "name": "ingressDomain",
+                                    "parseType": "AnyLiteral",
+                                    "baseType": "STRING"
+                                }
+                            ],
+                            "required": [
+                                "name",
+                                "baseType",
+                                "parseType",
+                                "values"
+                            ],
+                            "properties": {
+                                "name": {
+                                    "$id": "#/properties/deploymentOptions/properties/ingressDomain/properties/option/properties/name",
+                                    "type": "string",
+                                    "title": "The Name Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "ingressDomain"
+                                    ]
+                                },
+                                "baseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/ingressDomain/properties/option/properties/baseType",
+                                    "type": "string",
+                                    "title": "The Basetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "STRING"
+                                    ]
+                                },
+                                "parseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/ingressDomain/properties/option/properties/parseType",
+                                    "type": "string",
+                                    "title": "The Parsetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "AnyLiteral"
+                                    ]
+                                },
+                                "values": {
+                                    "$id": "#/properties/deploymentOptions/properties/ingressDomain/properties/option/properties/values",
+                                    "type": "array",
+                                    "title": "The Values Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": [],
+                                    "items": {
+                                        "$id": "#/properties/deploymentOptions/properties/ingressDomain/properties/option/properties/values/items",
+                                        "type": "string",
+                                        "title": "The Items Schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "\"Ingress\""
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "dockerRepositoryName": {
+                    "$id": "#/properties/deploymentOptions/properties/dockerRepositoryName",
+                    "type": "object",
+                    "title": "The Dockerrepositoryname Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "option": {
+                                "baseType": "STRING",
+                                "values": [],
+                                "name": "dockerRepositoryName",
+                                "parseType": "String"
+                            }
+                        }
+                    ],
+                    "required": [
+                        "option"
+                    ],
+                    "properties": {
+                        "option": {
+                            "$id": "#/properties/deploymentOptions/properties/dockerRepositoryName/properties/option",
+                            "type": "object",
+                            "title": "The Option Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": {},
+                            "examples": [
+                                {
+                                    "values": [],
+                                    "name": "dockerRepositoryName",
+                                    "parseType": "String",
+                                    "baseType": "STRING"
+                                }
+                            ],
+                            "required": [
+                                "name",
+                                "baseType",
+                                "parseType",
+                                "values"
+                            ],
+                            "properties": {
+                                "name": {
+                                    "$id": "#/properties/deploymentOptions/properties/dockerRepositoryName/properties/option/properties/name",
+                                    "type": "string",
+                                    "title": "The Name Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "dockerRepositoryName"
+                                    ]
+                                },
+                                "baseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/dockerRepositoryName/properties/option/properties/baseType",
+                                    "type": "string",
+                                    "title": "The Basetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "STRING"
+                                    ]
+                                },
+                                "parseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/dockerRepositoryName/properties/option/properties/parseType",
+                                    "type": "string",
+                                    "title": "The Parsetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "String"
+                                    ]
+                                },
+                                "values": {
+                                    "$id": "#/properties/deploymentOptions/properties/dockerRepositoryName/properties/option/properties/values",
+                                    "type": "array",
+                                    "title": "The Values Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": []
+                                }
+                            }
+                        }
+                    }
+                },
+                "deploymentType": {
+                    "$id": "#/properties/deploymentOptions/properties/deploymentType",
+                    "type": "object",
+                    "title": "The Deploymenttype Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "option": {
+                                "name": "deploymentType",
+                                "parseType": "Literal",
+                                "baseType": "STRING",
+                                "values": [
+                                    "docker-compose",
+                                    "kubernetes",
+                                    "openshift"
+                                ]
+                            }
+                        }
+                    ],
+                    "required": [
+                        "option"
+                    ],
+                    "properties": {
+                        "option": {
+                            "$id": "#/properties/deploymentOptions/properties/deploymentType/properties/option",
+                            "type": "object",
+                            "title": "The Option Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": {},
+                            "examples": [
+                                {
+                                    "values": [
+                                        "docker-compose",
+                                        "kubernetes",
+                                        "openshift"
+                                    ],
+                                    "name": "deploymentType",
+                                    "parseType": "Literal",
+                                    "baseType": "STRING"
+                                }
+                            ],
+                            "required": [
+                                "name",
+                                "baseType",
+                                "parseType",
+                                "values"
+                            ],
+                            "properties": {
+                                "name": {
+                                    "$id": "#/properties/deploymentOptions/properties/deploymentType/properties/option/properties/name",
+                                    "type": "string",
+                                    "title": "The Name Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "deploymentType"
+                                    ]
+                                },
+                                "baseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/deploymentType/properties/option/properties/baseType",
+                                    "type": "string",
+                                    "title": "The Basetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "STRING"
+                                    ]
+                                },
+                                "parseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/deploymentType/properties/option/properties/parseType",
+                                    "type": "string",
+                                    "title": "The Parsetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Literal"
+                                    ]
+                                },
+                                "values": {
+                                    "$id": "#/properties/deploymentOptions/properties/deploymentType/properties/option/properties/values",
+                                    "type": "array",
+                                    "title": "The Values Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": [],
+                                    "items": {
+                                        "$id": "#/properties/deploymentOptions/properties/deploymentType/properties/option/properties/values/items",
+                                        "type": "string",
+                                        "title": "The Items Schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "docker-compose",
+                                            "kubernetes",
+                                            "openshift"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "gatewayType": {
+                    "$id": "#/properties/deploymentOptions/properties/gatewayType",
+                    "type": "object",
+                    "title": "The Gatewaytype Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "option": {
+                                "baseType": "STRING",
+                                "values": [
+                                    "zuul",
+                                    "traefik"
+                                ],
+                                "name": "gatewayType",
+                                "parseType": "Literal"
+                            }
+                        }
+                    ],
+                    "required": [
+                        "option"
+                    ],
+                    "properties": {
+                        "option": {
+                            "$id": "#/properties/deploymentOptions/properties/gatewayType/properties/option",
+                            "type": "object",
+                            "title": "The Option Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": {},
+                            "examples": [
+                                {
+                                    "values": [
+                                        "zuul",
+                                        "traefik"
+                                    ],
+                                    "name": "gatewayType",
+                                    "parseType": "Literal",
+                                    "baseType": "STRING"
+                                }
+                            ],
+                            "required": [
+                                "name",
+                                "baseType",
+                                "parseType",
+                                "values"
+                            ],
+                            "properties": {
+                                "name": {
+                                    "$id": "#/properties/deploymentOptions/properties/gatewayType/properties/option/properties/name",
+                                    "type": "string",
+                                    "title": "The Name Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "gatewayType"
+                                    ]
+                                },
+                                "baseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/gatewayType/properties/option/properties/baseType",
+                                    "type": "string",
+                                    "title": "The Basetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "STRING"
+                                    ]
+                                },
+                                "parseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/gatewayType/properties/option/properties/parseType",
+                                    "type": "string",
+                                    "title": "The Parsetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Literal"
+                                    ]
+                                },
+                                "values": {
+                                    "$id": "#/properties/deploymentOptions/properties/gatewayType/properties/option/properties/values",
+                                    "type": "array",
+                                    "title": "The Values Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": [],
+                                    "items": {
+                                        "$id": "#/properties/deploymentOptions/properties/gatewayType/properties/option/properties/values/items",
+                                        "type": "string",
+                                        "title": "The Items Schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "zuul",
+                                            "traefik"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "directoryPath": {
+                    "$id": "#/properties/deploymentOptions/properties/directoryPath",
+                    "type": "object",
+                    "title": "The Directorypath Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "option": {
+                                "baseType": "STRING",
+                                "values": [
+                                    "\"../\""
+                                ],
+                                "name": "directoryPath",
+                                "parseType": "AnyLiteral"
+                            }
+                        }
+                    ],
+                    "required": [
+                        "option"
+                    ],
+                    "properties": {
+                        "option": {
+                            "$id": "#/properties/deploymentOptions/properties/directoryPath/properties/option",
+                            "type": "object",
+                            "title": "The Option Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": {},
+                            "examples": [
+                                {
+                                    "baseType": "STRING",
+                                    "values": [
+                                        "\"../\""
+                                    ],
+                                    "name": "directoryPath",
+                                    "parseType": "AnyLiteral"
+                                }
+                            ],
+                            "required": [
+                                "name",
+                                "baseType",
+                                "parseType",
+                                "values"
+                            ],
+                            "properties": {
+                                "name": {
+                                    "$id": "#/properties/deploymentOptions/properties/directoryPath/properties/option/properties/name",
+                                    "type": "string",
+                                    "title": "The Name Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "directoryPath"
+                                    ]
+                                },
+                                "baseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/directoryPath/properties/option/properties/baseType",
+                                    "type": "string",
+                                    "title": "The Basetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "STRING"
+                                    ]
+                                },
+                                "parseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/directoryPath/properties/option/properties/parseType",
+                                    "type": "string",
+                                    "title": "The Parsetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "AnyLiteral"
+                                    ]
+                                },
+                                "values": {
+                                    "$id": "#/properties/deploymentOptions/properties/directoryPath/properties/option/properties/values",
+                                    "type": "array",
+                                    "title": "The Values Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": [],
+                                    "items": {
+                                        "$id": "#/properties/deploymentOptions/properties/directoryPath/properties/option/properties/values/items",
+                                        "type": "string",
+                                        "title": "The Items Schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "\"../\""
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "consoleOptions": {
+                    "$id": "#/properties/deploymentOptions/properties/consoleOptions",
+                    "type": "object",
+                    "title": "The Consoleoptions Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "option": {
+                                "baseType": "LIST",
+                                "values": [
+                                    "curator",
+                                    "zipkin"
+                                ],
+                                "name": "consoleOptions",
+                                "parseType": "ListOfLiterals"
+                            }
+                        }
+                    ],
+                    "required": [
+                        "option"
+                    ],
+                    "properties": {
+                        "option": {
+                            "$id": "#/properties/deploymentOptions/properties/consoleOptions/properties/option",
+                            "type": "object",
+                            "title": "The Option Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": {},
+                            "examples": [
+                                {
+                                    "baseType": "LIST",
+                                    "values": [
+                                        "curator",
+                                        "zipkin"
+                                    ],
+                                    "name": "consoleOptions",
+                                    "parseType": "ListOfLiterals"
+                                }
+                            ],
+                            "required": [
+                                "name",
+                                "baseType",
+                                "parseType",
+                                "values"
+                            ],
+                            "properties": {
+                                "name": {
+                                    "$id": "#/properties/deploymentOptions/properties/consoleOptions/properties/option/properties/name",
+                                    "type": "string",
+                                    "title": "The Name Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "consoleOptions"
+                                    ]
+                                },
+                                "baseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/consoleOptions/properties/option/properties/baseType",
+                                    "type": "string",
+                                    "title": "The Basetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "LIST"
+                                    ]
+                                },
+                                "parseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/consoleOptions/properties/option/properties/parseType",
+                                    "type": "string",
+                                    "title": "The Parsetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "ListOfLiterals"
+                                    ]
+                                },
+                                "values": {
+                                    "$id": "#/properties/deploymentOptions/properties/consoleOptions/properties/option/properties/values",
+                                    "type": "array",
+                                    "title": "The Values Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": [],
+                                    "items": {
+                                        "$id": "#/properties/deploymentOptions/properties/consoleOptions/properties/option/properties/values/items",
+                                        "type": "string",
+                                        "title": "The Items Schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "curator",
+                                            "zipkin"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "openshiftNamespace": {
+                    "$id": "#/properties/deploymentOptions/properties/openshiftNamespace",
+                    "type": "object",
+                    "title": "The Openshiftnamespace Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "option": {
+                                "name": "openshiftNamespace",
+                                "parseType": "AnyLiteral",
+                                "baseType": "STRING",
+                                "values": [
+                                    "default"
+                                ]
+                            }
+                        }
+                    ],
+                    "required": [
+                        "option"
+                    ],
+                    "properties": {
+                        "option": {
+                            "$id": "#/properties/deploymentOptions/properties/openshiftNamespace/properties/option",
+                            "type": "object",
+                            "title": "The Option Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": {},
+                            "examples": [
+                                {
+                                    "name": "openshiftNamespace",
+                                    "parseType": "AnyLiteral",
+                                    "baseType": "STRING",
+                                    "values": [
+                                        "default"
+                                    ]
+                                }
+                            ],
+                            "required": [
+                                "name",
+                                "baseType",
+                                "parseType",
+                                "values"
+                            ],
+                            "properties": {
+                                "name": {
+                                    "$id": "#/properties/deploymentOptions/properties/openshiftNamespace/properties/option/properties/name",
+                                    "type": "string",
+                                    "title": "The Name Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "openshiftNamespace"
+                                    ]
+                                },
+                                "baseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/openshiftNamespace/properties/option/properties/baseType",
+                                    "type": "string",
+                                    "title": "The Basetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "STRING"
+                                    ]
+                                },
+                                "parseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/openshiftNamespace/properties/option/properties/parseType",
+                                    "type": "string",
+                                    "title": "The Parsetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "AnyLiteral"
+                                    ]
+                                },
+                                "values": {
+                                    "$id": "#/properties/deploymentOptions/properties/openshiftNamespace/properties/option/properties/values",
+                                    "type": "array",
+                                    "title": "The Values Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": [],
+                                    "items": {
+                                        "$id": "#/properties/deploymentOptions/properties/openshiftNamespace/properties/option/properties/values/items",
+                                        "type": "string",
+                                        "title": "The Items Schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "default"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "storageType": {
+                    "$id": "#/properties/deploymentOptions/properties/storageType",
+                    "type": "object",
+                    "title": "The Storagetype Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "option": {
+                                "values": [
+                                    "ephemeral",
+                                    "persistent"
+                                ],
+                                "name": "storageType",
+                                "parseType": "Literal",
+                                "baseType": "STRING"
+                            }
+                        }
+                    ],
+                    "required": [
+                        "option"
+                    ],
+                    "properties": {
+                        "option": {
+                            "$id": "#/properties/deploymentOptions/properties/storageType/properties/option",
+                            "type": "object",
+                            "title": "The Option Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": {},
+                            "examples": [
+                                {
+                                    "values": [
+                                        "ephemeral",
+                                        "persistent"
+                                    ],
+                                    "name": "storageType",
+                                    "parseType": "Literal",
+                                    "baseType": "STRING"
+                                }
+                            ],
+                            "required": [
+                                "name",
+                                "baseType",
+                                "parseType",
+                                "values"
+                            ],
+                            "properties": {
+                                "name": {
+                                    "$id": "#/properties/deploymentOptions/properties/storageType/properties/option/properties/name",
+                                    "type": "string",
+                                    "title": "The Name Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "storageType"
+                                    ]
+                                },
+                                "baseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/storageType/properties/option/properties/baseType",
+                                    "type": "string",
+                                    "title": "The Basetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "STRING"
+                                    ]
+                                },
+                                "parseType": {
+                                    "$id": "#/properties/deploymentOptions/properties/storageType/properties/option/properties/parseType",
+                                    "type": "string",
+                                    "title": "The Parsetype Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Literal"
+                                    ]
+                                },
+                                "values": {
+                                    "$id": "#/properties/deploymentOptions/properties/storageType/properties/option/properties/values",
+                                    "type": "array",
+                                    "title": "The Values Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": [],
+                                    "items": {
+                                        "$id": "#/properties/deploymentOptions/properties/storageType/properties/option/properties/values/items",
+                                        "type": "string",
+                                        "title": "The Items Schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "ephemeral",
+                                            "persistent"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

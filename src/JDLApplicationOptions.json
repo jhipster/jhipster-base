@@ -1,0 +1,386 @@
+{
+  "applicationOptions": {
+    "applicationType": {
+      "option": {
+        "name": "applicationType",
+        "baseType": "STRING",
+        "parseType": "Literal",
+        "values": [
+          "monolith",
+          "microservice",
+          "gateway",
+          "uaa"
+        ]
+      }
+    },
+    "entitySuffix": {
+      "option": {
+        "name": "entitySuffix",
+        "baseType": "STRING",
+        "parseType": "JavaIdentifierLiteral",
+        "values": [
+          "Entity"
+        ]
+      }
+    },
+    "serviceDiscoveryType": {
+      "option": {
+        "name": "serviceDiscoveryType",
+        "baseType": "STRING",
+        "parseType": "Literal",
+        "values": [
+          "eureka",
+          "consul",
+          "no",
+          "false"
+        ]
+      }
+    },
+    "devDatabaseType": {
+      "option": {
+        "name": "devDatabaseType",
+        "baseType": "STRING",
+        "parseType": "Literal",
+        "values": [
+          "h2Disk",
+          "h2Memory",
+          "mysql",
+          "mariadb",
+          "mssql",
+          "postgresql",
+          "oracle",
+          "no",
+          "mongodb",
+          "cassandra",
+          "couchbase"
+        ]
+      }
+    },
+    "testFrameworks": {
+      "option": {
+        "name": "testFrameworks",
+        "baseType": "LIST",
+        "parseType": "ListOfLiterals",
+        "values": [
+          "protractor",
+          "cucumber",
+          "gatling"
+        ]
+      }
+    },
+    "clientThemeVariant": {
+      "option": {
+        "name": "clientThemeVariant",
+        "baseType": "STRING",
+        "parseType": "AnyLiteral",
+        "values": [
+          "primary"
+        ]
+      }
+    },
+    "dtoSuffix": {
+      "option": {
+        "name": "dtoSuffix",
+        "baseType": "STRING",
+        "parseType": "JavaIdentifierLiteral",
+        "values": [
+          "DTO"
+        ]
+      }
+    },
+    "nativeLanguage": {
+      "option": {
+        "name": "nativeLanguage",
+        "baseType": "STRING",
+        "parseType": "LangIsoCode",
+        "values": [
+          "en"
+        ]
+      }
+    },
+    "jwtSecretKey": {
+      "option": {
+        "name": "jwtSecretKey",
+        "baseType": "STRING",
+        "parseType": "Namespace",
+        "values": []
+      }
+    },
+    "serverPort": {
+      "option": {
+        "name": "serverPort",
+        "baseType": "INTEGER",
+        "parseType": "Number",
+        "values": [
+          "8080",
+          "8081",
+          "9999"
+        ]
+      }
+    },
+    "skipClient": {
+      "option": {
+        "name": "skipClient",
+        "baseType": "BOOLEAN",
+        "parseType": "Boolean",
+        "values": [
+          "false"
+        ]
+      }
+    },
+    "messageBroker": {
+      "option": {
+        "name": "messageBroker",
+        "baseType": "STRING",
+        "parseType": "Literal",
+        "values": [
+          "kafka",
+          "false"
+        ]
+      }
+    },
+    "cacheProvider": {
+      "option": {
+        "name": "cacheProvider",
+        "baseType": "STRING",
+        "parseType": "Literal",
+        "values": [
+          "ehcache",
+          "hazelcast",
+          "caffeine",
+          "infinispan",
+          "memcached",
+          "redis",
+          "no"
+        ]
+      }
+    },
+    "websocket": {
+      "option": {
+        "name": "websocket",
+        "baseType": "STRING",
+        "parseType": "Literal",
+        "values": [
+          "spring-websocket",
+          "false"
+        ]
+      }
+    },
+    "buildTool": {
+      "option": {
+        "name": "buildTool",
+        "baseType": "STRING",
+        "parseType": "Literal",
+        "values": [
+          "maven",
+          "gradle"
+        ]
+      }
+    },
+    "packageName": {
+      "option": {
+        "name": "packageName",
+        "baseType": "STRING",
+        "parseType": "Namespace",
+        "values": []
+      }
+    },
+    "prodDatabaseType": {
+      "option": {
+        "name": "prodDatabaseType",
+        "baseType": "STRING",
+        "parseType": "Literal",
+        "values": [
+          "mysql",
+          "mariadb",
+          "mssql",
+          "postgresql",
+          "oracle",
+          "no",
+          "mongodb",
+          "cassandra",
+          "couchbase"
+        ]
+      }
+    },
+    "baseName": {
+      "option": {
+        "name": "baseName",
+        "baseType": "STRING",
+        "parseType": "AnyLiteral",
+        "values": [
+          "jhipster"
+        ]
+      }
+    },
+    "skipUserManagement": {
+      "option": {
+        "name": "skipUserManagement",
+        "baseType": "BOOLEAN",
+        "parseType": "Boolean",
+        "values": [
+          "true"
+        ]
+      }
+    },
+    "enableTranslation": {
+      "option": {
+        "name": "enableTranslation",
+        "baseType": "BOOLEAN",
+        "parseType": "Boolean",
+        "values": [
+          "true"
+        ]
+      }
+    },
+    "languages": {
+      "option": {
+        "name": "languages",
+        "baseType": "LIST",
+        "parseType": "ListOfLangIsoCodes",
+        "values": [
+          "en",
+          "fr"
+        ]
+      }
+    },
+    "searchEngine": {
+      "option": {
+        "name": "searchEngine",
+        "baseType": "STRING",
+        "parseType": "Literal",
+        "values": [
+          "elasticsearch",
+          "false"
+        ]
+      }
+    },
+    "jhiPrefix": {
+      "option": {
+        "name": "jhiPrefix",
+        "baseType": "STRING",
+        "parseType": "JavaIdentifierLiteral",
+        "values": [
+          "jhi"
+        ]
+      }
+    },
+    "clientPackageManager": {
+      "option": {
+        "name": "clientPackageManager",
+        "baseType": "STRING",
+        "parseType": "Literal",
+        "values": [
+          "npm",
+          "yarn"
+        ]
+      }
+    },
+    "databaseType": {
+      "option": {
+        "name": "databaseType",
+        "baseType": "STRING",
+        "parseType": "Literal",
+        "values": [
+          "sql",
+          "mongodb",
+          "cassandra",
+          "couchbase",
+          "no"
+        ]
+      }
+    },
+    "uaaBaseName": {
+      "option": {
+        "name": "uaaBaseName",
+        "baseType": "STRING",
+        "parseType": "Literal",
+        "values": [
+          "\"uaa\""
+        ]
+      }
+    },
+    "reactive": {
+      "option": {
+        "name": "reactive",
+        "baseType": "BOOLEAN",
+        "parseType": "Boolean",
+        "values": [
+          "false"
+        ]
+      }
+    },
+    "enableSwaggerCodegen": {
+      "option": {
+        "name": "enableSwaggerCodegen",
+        "baseType": "BOOLEAN",
+        "parseType": "Boolean",
+        "values": [
+          "false"
+        ]
+      }
+    },
+    "skipServer": {
+      "option": {
+        "name": "skipServer",
+        "baseType": "BOOLEAN",
+        "parseType": "Boolean",
+        "values": [
+          "false"
+        ]
+      }
+    },
+    "clientFramework": {
+      "option": {
+        "name": "clientFramework",
+        "baseType": "STRING",
+        "parseType": "Literal",
+        "values": [
+          "angularX",
+          "react"
+        ]
+      }
+    },
+    "enableHibernateCache": {
+      "option": {
+        "name": "enableHibernateCache",
+        "baseType": "BOOLEAN",
+        "parseType": "Boolean",
+        "values": [
+          "true"
+        ]
+      }
+    },
+    "useSass": {
+      "option": {
+        "name": "useSass",
+        "baseType": "BOOLEAN",
+        "parseType": "Boolean",
+        "values": []
+      }
+    },
+    "authenticationType": {
+      "option": {
+        "name": "authenticationType",
+        "baseType": "STRING",
+        "parseType": "Literal",
+        "values": [
+          "jwt",
+          "uaa",
+          "session",
+          "oauth2"
+        ]
+      }
+    },
+    "clientTheme": {
+      "option": {
+        "name": "clientTheme",
+        "baseType": "STRING",
+        "parseType": "AnyLiteral",
+        "values": [
+          "none"
+        ]
+      }
+    }
+  }
+}

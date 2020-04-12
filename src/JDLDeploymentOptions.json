@@ -1,0 +1,170 @@
+{
+  "deploymentOptions": {
+    "dockerPushCommand": {
+      "option": {
+        "name": "dockerPushCommand",
+        "baseType": "STRING",
+        "parseType": "AnyLiteral",
+        "values": [
+          "\"docker push\""
+        ]
+      }
+    },
+    "kubernetesNamespace": {
+      "option": {
+        "name": "kubernetesNamespace",
+        "baseType": "STRING",
+        "parseType": "AnyLiteral",
+        "values": [
+          "default"
+        ]
+      }
+    },
+    "serviceDiscoveryType": {
+      "option": {
+        "name": "serviceDiscoveryType",
+        "baseType": "STRING",
+        "parseType": "Literal",
+        "values": [
+          "eureka",
+          "consul",
+          "no"
+        ]
+      }
+    },
+    "clusteredDbApps": {
+      "option": {
+        "name": "clusteredDbApps",
+        "baseType": "LIST",
+        "parseType": "ListOfAnyLiterals",
+        "values": []
+      }
+    },
+    "appsFolders": {
+      "option": {
+        "name": "appsFolders",
+        "baseType": "LIST",
+        "parseType": "ListOfAnyLiterals",
+        "values": []
+      }
+    },
+    "monitoring": {
+      "option": {
+        "name": "monitoring",
+        "baseType": "STRING",
+        "parseType": "Literal",
+        "values": [
+          "no",
+          "elk",
+          "prometheus"
+        ]
+      }
+    },
+    "istio": {
+      "option": {
+        "name": "istio",
+        "baseType": "BOOLEAN",
+        "parseType": "Boolean",
+        "values": [
+          "true",
+          "false"
+        ]
+      }
+    },
+    "kubernetesServiceType": {
+      "option": {
+        "name": "kubernetesServiceType",
+        "baseType": "STRING",
+        "parseType": "Literal",
+        "values": [
+          "LoadBalancer",
+          "NodePort",
+          "Ingress"
+        ]
+      }
+    },
+    "ingressDomain": {
+      "option": {
+        "name": "ingressDomain",
+        "baseType": "STRING",
+        "parseType": "AnyLiteral",
+        "values": [
+          "\"Ingress\""
+        ]
+      }
+    },
+    "dockerRepositoryName": {
+      "option": {
+        "name": "dockerRepositoryName",
+        "baseType": "STRING",
+        "parseType": "String",
+        "values": []
+      }
+    },
+    "deploymentType": {
+      "option": {
+        "name": "deploymentType",
+        "baseType": "STRING",
+        "parseType": "Literal",
+        "values": [
+          "docker-compose",
+          "kubernetes",
+          "openshift"
+        ]
+      }
+    },
+    "gatewayType": {
+      "option": {
+        "name": "gatewayType",
+        "baseType": "STRING",
+        "parseType": "Literal",
+        "values": [
+          "zuul",
+          "traefik"
+        ]
+      }
+    },
+    "directoryPath": {
+      "option": {
+        "name": "directoryPath",
+        "baseType": "STRING",
+        "parseType": "AnyLiteral",
+        "values": [
+          "\"../\""
+        ]
+      }
+    },
+    "consoleOptions": {
+      "option": {
+        "name": "consoleOptions",
+        "baseType": "LIST",
+        "parseType": "ListOfLiterals",
+        "values": [
+          "curator",
+          "zipkin"
+        ]
+      }
+    },
+    "openshiftNamespace": {
+      "option": {
+        "name": "openshiftNamespace",
+        "baseType": "STRING",
+        "parseType": "AnyLiteral",
+        "values": [
+          "default"
+        ]
+      }
+    },
+    "storageType": {
+      "option": {
+        "name": "storageType",
+        "baseType": "STRING",
+        "parseType": "Literal",
+        "values": [
+          "ephemeral",
+          "persistent"
+        ]
+      }
+    }
+  }
+}
