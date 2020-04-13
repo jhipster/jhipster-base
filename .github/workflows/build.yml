@@ -26,5 +26,6 @@ jobs:
     - name: Setup Node.js environment
       uses: actions/setup-node@v1.4.1
     - run: npm install -g ajv-cli
-    - run: ajv validate -s ./src/JDLApplicationOptions.schema.json -d ./src/JDLApplicationOptions.json
-    - run: ajv validate -s ./src/JDLDeploymentOptions.schema.json -d ./src/JDLDeploymentOptions.json
+    - run: |
+    	chmod +x ./scripts/validate.sh
+    	sh ./scripts/validate.sh
