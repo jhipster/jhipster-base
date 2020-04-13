@@ -27,5 +27,4 @@ jobs:
       uses: actions/setup-node@v1.4.1
     - run: npm install -g ajv-cli
     - run: |
-    	chmod +x ./scripts/validate.sh
-    	sh ./scripts/validate.sh
+    	./scripts/validate.sh
