@@ -16,14 +16,85 @@
             "default": {},
             "examples": [
                 {
+                    "clusteredDbApps": {
+                        "option": {
+                            "values": [],
+                            "description": "Directory names for the applications with clustered DB separated by comma. Must be a list, example [foo, bar]",
+                            "name": "clusteredDbApps",
+                            "parseType": "ListOfAnyLiterals",
+                            "baseType": "LIST"
+                        }
+                    },
+                    "kubernetesServiceType": {
+                        "option": {
+                            "name": "kubernetesServiceType",
+                            "parseType": "Literal",
+                            "baseType": "STRING",
+                            "values": [
+                                "LoadBalancer",
+                                "NodePort",
+                                "Ingress"
+                            ],
+                            "description": "Applicable only when deploymentType is kubernetes"
+                        }
+                    },
+                    "istio": {
+                        "option": {
+                            "baseType": "BOOLEAN",
+                            "values": [
+                                "true",
+                                "false"
+                            ],
+                            "description": "Applicable only when deploymentType is kubernetes",
+                            "name": "istio",
+                            "parseType": "Boolean"
+                        }
+                    },
+                    "monitoring": {
+                        "option": {
+                            "baseType": "STRING",
+                            "values": [
+                                "no",
+                                "elk",
+                                "prometheus"
+                            ],
+                            "description": "",
+                            "name": "monitoring",
+                            "parseType": "Literal"
+                        }
+                    },
+                    "storageType": {
+                        "option": {
+                            "baseType": "STRING",
+                            "values": [
+                                "ephemeral",
+                                "persistent"
+                            ],
+                            "description": "Applicable only when deploymentType is openshift",
+                            "name": "storageType",
+                            "parseType": "Literal"
+                        }
+                    },
+                    "kubernetesNamespace": {
+                        "option": {
+                            "values": [
+                                "default"
+                            ],
+                            "description": "Applicable only when deploymentType is kubernetes",
+                            "name": "kubernetesNamespace",
+                            "parseType": "AnyLiteral",
+                            "baseType": "STRING"
+                        }
+                    },
                     "ingressDomain": {
                         "option": {
+                            "baseType": "STRING",
                             "values": [
                                 "\"Ingress\""
                             ],
+                            "description": "The domain for Ingress when kubernetesServiceType is `Ingress`. Must be in double quotes. Applicable only when deploymentType is kubernetes",
                             "name": "ingressDomain",
-                            "parseType": "AnyLiteral",
-                            "baseType": "STRING"
+                            "parseType": "AnyLiteral"
                         }
                     },
                     "gatewayType": {
@@ -32,6 +103,7 @@
                                 "zuul",
                                 "traefik"
                             ],
+                            "description": "Value is ignored when serviceDiscoveryType is `no`",
                             "name": "gatewayType",
                             "parseType": "Literal",
                             "baseType": "STRING"
@@ -39,45 +111,49 @@
                     },
                     "deploymentType": {
                         "option": {
+                            "name": "deploymentType",
+                            "parseType": "Literal",
                             "baseType": "STRING",
                             "values": [
                                 "docker-compose",
                                 "kubernetes",
                                 "openshift"
                             ],
-                            "name": "deploymentType",
-                            "parseType": "Literal"
+                            "description": ""
                         }
                     },
                     "serviceDiscoveryType": {
                         "option": {
+                            "baseType": "STRING",
                             "values": [
                                 "eureka",
                                 "consul",
                                 "no"
                             ],
+                            "description": "",
                             "name": "serviceDiscoveryType",
-                            "parseType": "Literal",
-                            "baseType": "STRING"
+                            "parseType": "Literal"
                         }
                     },
                     "consoleOptions": {
                         "option": {
-                            "baseType": "LIST",
                             "values": [
                                 "curator",
                                 "zipkin"
                             ],
+                            "description": "Must be a list",
                             "name": "consoleOptions",
-                            "parseType": "ListOfLiterals"
+                            "parseType": "ListOfLiterals",
+                            "baseType": "LIST"
                         }
                     },
                     "dockerRepositoryName": {
                         "option": {
-                            "baseType": "STRING",
                             "values": [],
+                            "description": "The name or URL of the docker repository. Must be in double quotes",
                             "name": "dockerRepositoryName",
-                            "parseType": "String"
+                            "parseType": "String",
+                            "baseType": "STRING"
                         }
                     },
                     "openshiftNamespace": {
@@ -85,6 +161,7 @@
                             "values": [
                                 "default"
                             ],
+                            "description": "Applicable only when deploymentType is openshift",
                             "name": "openshiftNamespace",
                             "parseType": "AnyLiteral",
                             "baseType": "STRING"
@@ -96,16 +173,9 @@
                             "values": [
                                 "\"../\""
                             ],
+                            "description": "Relative path. Must be in double quotes",
                             "name": "directoryPath",
                             "parseType": "AnyLiteral"
-                        }
-                    },
-                    "appsFolders": {
-                        "option": {
-                            "name": "appsFolders",
-                            "parseType": "ListOfAnyLiterals",
-                            "baseType": "LIST",
-                            "values": []
                         }
                     },
                     "dockerPushCommand": {
@@ -114,72 +184,18 @@
                             "values": [
                                 "\"docker push\""
                             ],
+                            "description": "The docker push command to use. Must be in double quotes",
                             "name": "dockerPushCommand",
                             "parseType": "AnyLiteral"
                         }
                     },
-                    "clusteredDbApps": {
+                    "appsFolders": {
                         "option": {
-                            "baseType": "LIST",
                             "values": [],
-                            "name": "clusteredDbApps",
-                            "parseType": "ListOfAnyLiterals"
-                        }
-                    },
-                    "kubernetesServiceType": {
-                        "option": {
-                            "baseType": "STRING",
-                            "values": [
-                                "LoadBalancer",
-                                "NodePort",
-                                "Ingress"
-                            ],
-                            "name": "kubernetesServiceType",
-                            "parseType": "Literal"
-                        }
-                    },
-                    "istio": {
-                        "option": {
-                            "baseType": "BOOLEAN",
-                            "values": [
-                                "true",
-                                "false"
-                            ],
-                            "name": "istio",
-                            "parseType": "Boolean"
-                        }
-                    },
-                    "monitoring": {
-                        "option": {
-                            "values": [
-                                "no",
-                                "elk",
-                                "prometheus"
-                            ],
-                            "name": "monitoring",
-                            "parseType": "Literal",
-                            "baseType": "STRING"
-                        }
-                    },
-                    "storageType": {
-                        "option": {
-                            "baseType": "STRING",
-                            "values": [
-                                "ephemeral",
-                                "persistent"
-                            ],
-                            "name": "storageType",
-                            "parseType": "Literal"
-                        }
-                    },
-                    "kubernetesNamespace": {
-                        "option": {
-                            "baseType": "STRING",
-                            "values": [
-                                "default"
-                            ],
-                            "name": "kubernetesNamespace",
-                            "parseType": "AnyLiteral"
+                            "description": "Directory names for the applications separated by comma. Must be a list, example [foo, bar]",
+                            "name": "appsFolders",
+                            "parseType": "ListOfAnyLiterals",
+                            "baseType": "LIST"
                         }
                     }
                 }
@@ -212,12 +228,13 @@
                     "examples": [
                         {
                             "option": {
-                                "name": "dockerPushCommand",
-                                "parseType": "AnyLiteral",
                                 "baseType": "STRING",
                                 "values": [
                                     "\"docker push\""
-                                ]
+                                ],
+                                "description": "The docker push command to use. Must be in double quotes",
+                                "name": "dockerPushCommand",
+                                "parseType": "AnyLiteral"
                             }
                         }
                     ],
@@ -237,6 +254,7 @@
                                     "values": [
                                         "\"docker push\""
                                     ],
+                                    "description": "The docker push command to use. Must be in double quotes",
                                     "name": "dockerPushCommand",
                                     "parseType": "AnyLiteral"
                                 }
@@ -245,7 +263,8 @@
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -294,6 +313,16 @@
                                             "\"docker push\""
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/deploymentOptions/properties/dockerPushCommand/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "The docker push command to use. Must be in double quotes"
+                                    ]
                                 }
                             }
                         }
@@ -312,6 +341,7 @@
                                 "values": [
                                     "default"
                                 ],
+                                "description": "Applicable only when deploymentType is kubernetes",
                                 "name": "kubernetesNamespace",
                                 "parseType": "AnyLiteral"
                             }
@@ -329,19 +359,21 @@
                             "default": {},
                             "examples": [
                                 {
-                                    "baseType": "STRING",
                                     "values": [
                                         "default"
                                     ],
+                                    "description": "Applicable only when deploymentType is kubernetes",
                                     "name": "kubernetesNamespace",
-                                    "parseType": "AnyLiteral"
+                                    "parseType": "AnyLiteral",
+                                    "baseType": "STRING"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -390,6 +422,16 @@
                                             "default"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/deploymentOptions/properties/kubernetesNamespace/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Applicable only when deploymentType is kubernetes"
+                                    ]
                                 }
                             }
                         }
@@ -404,14 +446,15 @@
                     "examples": [
                         {
                             "option": {
-                                "baseType": "STRING",
                                 "values": [
                                     "eureka",
                                     "consul",
                                     "no"
                                 ],
+                                "description": "",
                                 "name": "serviceDiscoveryType",
-                                "parseType": "Literal"
+                                "parseType": "Literal",
+                                "baseType": "STRING"
                             }
                         }
                     ],
@@ -433,6 +476,7 @@
                                         "consul",
                                         "no"
                                     ],
+                                    "description": "",
                                     "name": "serviceDiscoveryType",
                                     "parseType": "Literal"
                                 }
@@ -441,7 +485,8 @@
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -492,6 +537,16 @@
                                             "no"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/deploymentOptions/properties/serviceDiscoveryType/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -506,10 +561,11 @@
                     "examples": [
                         {
                             "option": {
-                                "name": "clusteredDbApps",
-                                "parseType": "ListOfAnyLiterals",
                                 "baseType": "LIST",
-                                "values": []
+                                "values": [],
+                                "description": "Directory names for the applications with clustered DB separated by comma. Must be a list, example [foo, bar]",
+                                "name": "clusteredDbApps",
+                                "parseType": "ListOfAnyLiterals"
                             }
                         }
                     ],
@@ -526,6 +582,7 @@
                             "examples": [
                                 {
                                     "values": [],
+                                    "description": "Directory names for the applications with clustered DB separated by comma. Must be a list, example [foo, bar]",
                                     "name": "clusteredDbApps",
                                     "parseType": "ListOfAnyLiterals",
                                     "baseType": "LIST"
@@ -535,7 +592,8 @@
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -574,6 +632,16 @@
                                     "title": "The Values Schema",
                                     "description": "An explanation about the purpose of this instance.",
                                     "default": []
+                                },
+                                "description": {
+                                    "$id": "#/properties/deploymentOptions/properties/clusteredDbApps/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Directory names for the applications with clustered DB separated by comma. Must be a list, example [foo, bar]"
+                                    ]
                                 }
                             }
                         }
@@ -588,10 +656,11 @@
                     "examples": [
                         {
                             "option": {
+                                "values": [],
+                                "description": "Directory names for the applications separated by comma. Must be a list, example [foo, bar]",
                                 "name": "appsFolders",
                                 "parseType": "ListOfAnyLiterals",
-                                "baseType": "LIST",
-                                "values": []
+                                "baseType": "LIST"
                             }
                         }
                     ],
@@ -607,17 +676,19 @@
                             "default": {},
                             "examples": [
                                 {
-                                    "baseType": "LIST",
                                     "values": [],
+                                    "description": "Directory names for the applications separated by comma. Must be a list, example [foo, bar]",
                                     "name": "appsFolders",
-                                    "parseType": "ListOfAnyLiterals"
+                                    "parseType": "ListOfAnyLiterals",
+                                    "baseType": "LIST"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -656,6 +727,16 @@
                                     "title": "The Values Schema",
                                     "description": "An explanation about the purpose of this instance.",
                                     "default": []
+                                },
+                                "description": {
+                                    "$id": "#/properties/deploymentOptions/properties/appsFolders/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Directory names for the applications separated by comma. Must be a list, example [foo, bar]"
+                                    ]
                                 }
                             }
                         }
@@ -675,6 +756,7 @@
                                     "elk",
                                     "prometheus"
                                 ],
+                                "description": "",
                                 "name": "monitoring",
                                 "parseType": "Literal",
                                 "baseType": "STRING"
@@ -693,21 +775,23 @@
                             "default": {},
                             "examples": [
                                 {
+                                    "baseType": "STRING",
                                     "values": [
                                         "no",
                                         "elk",
                                         "prometheus"
                                     ],
+                                    "description": "",
                                     "name": "monitoring",
-                                    "parseType": "Literal",
-                                    "baseType": "STRING"
+                                    "parseType": "Literal"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -758,6 +842,16 @@
                                             "prometheus"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/deploymentOptions/properties/monitoring/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -777,6 +871,7 @@
                                     "true",
                                     "false"
                                 ],
+                                "description": "Applicable only when deploymentType is kubernetes",
                                 "name": "istio",
                                 "parseType": "Boolean"
                             }
@@ -794,20 +889,22 @@
                             "default": {},
                             "examples": [
                                 {
+                                    "baseType": "BOOLEAN",
                                     "values": [
                                         "true",
                                         "false"
                                     ],
+                                    "description": "Applicable only when deploymentType is kubernetes",
                                     "name": "istio",
-                                    "parseType": "Boolean",
-                                    "baseType": "BOOLEAN"
+                                    "parseType": "Boolean"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -857,6 +954,16 @@
                                             "false"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/deploymentOptions/properties/istio/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Applicable only when deploymentType is kubernetes"
+                                    ]
                                 }
                             }
                         }
@@ -871,14 +978,15 @@
                     "examples": [
                         {
                             "option": {
+                                "name": "kubernetesServiceType",
+                                "parseType": "Literal",
                                 "baseType": "STRING",
                                 "values": [
                                     "LoadBalancer",
                                     "NodePort",
                                     "Ingress"
                                 ],
-                                "name": "kubernetesServiceType",
-                                "parseType": "Literal"
+                                "description": "Applicable only when deploymentType is kubernetes"
                             }
                         }
                     ],
@@ -900,6 +1008,7 @@
                                         "NodePort",
                                         "Ingress"
                                     ],
+                                    "description": "Applicable only when deploymentType is kubernetes",
                                     "name": "kubernetesServiceType",
                                     "parseType": "Literal"
                                 }
@@ -908,7 +1017,8 @@
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -959,6 +1069,16 @@
                                             "Ingress"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/deploymentOptions/properties/kubernetesServiceType/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Applicable only when deploymentType is kubernetes"
+                                    ]
                                 }
                             }
                         }
@@ -976,6 +1096,7 @@
                                 "values": [
                                     "\"Ingress\""
                                 ],
+                                "description": "The domain for Ingress when kubernetesServiceType is `Ingress`. Must be in double quotes. Applicable only when deploymentType is kubernetes",
                                 "name": "ingressDomain",
                                 "parseType": "AnyLiteral",
                                 "baseType": "STRING"
@@ -997,6 +1118,7 @@
                                     "values": [
                                         "\"Ingress\""
                                     ],
+                                    "description": "The domain for Ingress when kubernetesServiceType is `Ingress`. Must be in double quotes. Applicable only when deploymentType is kubernetes",
                                     "name": "ingressDomain",
                                     "parseType": "AnyLiteral",
                                     "baseType": "STRING"
@@ -1006,7 +1128,8 @@
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -1055,6 +1178,16 @@
                                             "\"Ingress\""
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/deploymentOptions/properties/ingressDomain/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "The domain for Ingress when kubernetesServiceType is `Ingress`. Must be in double quotes. Applicable only when deploymentType is kubernetes"
+                                    ]
                                 }
                             }
                         }
@@ -1069,10 +1202,11 @@
                     "examples": [
                         {
                             "option": {
-                                "baseType": "STRING",
                                 "values": [],
+                                "description": "The name or URL of the docker repository. Must be in double quotes",
                                 "name": "dockerRepositoryName",
-                                "parseType": "String"
+                                "parseType": "String",
+                                "baseType": "STRING"
                             }
                         }
                     ],
@@ -1088,17 +1222,19 @@
                             "default": {},
                             "examples": [
                                 {
+                                    "baseType": "STRING",
                                     "values": [],
+                                    "description": "The name or URL of the docker repository. Must be in double quotes",
                                     "name": "dockerRepositoryName",
-                                    "parseType": "String",
-                                    "baseType": "STRING"
+                                    "parseType": "String"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -1137,6 +1273,16 @@
                                     "title": "The Values Schema",
                                     "description": "An explanation about the purpose of this instance.",
                                     "default": []
+                                },
+                                "description": {
+                                    "$id": "#/properties/deploymentOptions/properties/dockerRepositoryName/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "The name or URL of the docker repository. Must be in double quotes"
+                                    ]
                                 }
                             }
                         }
@@ -1151,14 +1297,15 @@
                     "examples": [
                         {
                             "option": {
-                                "name": "deploymentType",
-                                "parseType": "Literal",
-                                "baseType": "STRING",
                                 "values": [
                                     "docker-compose",
                                     "kubernetes",
                                     "openshift"
-                                ]
+                                ],
+                                "description": "",
+                                "name": "deploymentType",
+                                "parseType": "Literal",
+                                "baseType": "STRING"
                             }
                         }
                     ],
@@ -1174,21 +1321,23 @@
                             "default": {},
                             "examples": [
                                 {
+                                    "name": "deploymentType",
+                                    "parseType": "Literal",
+                                    "baseType": "STRING",
                                     "values": [
                                         "docker-compose",
                                         "kubernetes",
                                         "openshift"
                                     ],
-                                    "name": "deploymentType",
-                                    "parseType": "Literal",
-                                    "baseType": "STRING"
+                                    "description": ""
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -1239,6 +1388,16 @@
                                             "openshift"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/deploymentOptions/properties/deploymentType/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -1258,6 +1417,7 @@
                                     "zuul",
                                     "traefik"
                                 ],
+                                "description": "Value is ignored when serviceDiscoveryType is `no`",
                                 "name": "gatewayType",
                                 "parseType": "Literal"
                             }
@@ -1279,6 +1439,7 @@
                                         "zuul",
                                         "traefik"
                                     ],
+                                    "description": "Value is ignored when serviceDiscoveryType is `no`",
                                     "name": "gatewayType",
                                     "parseType": "Literal",
                                     "baseType": "STRING"
@@ -1288,7 +1449,8 @@
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -1338,6 +1500,16 @@
                                             "traefik"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/deploymentOptions/properties/gatewayType/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Value is ignored when serviceDiscoveryType is `no`"
+                                    ]
                                 }
                             }
                         }
@@ -1352,12 +1524,13 @@
                     "examples": [
                         {
                             "option": {
-                                "baseType": "STRING",
                                 "values": [
                                     "\"../\""
                                 ],
+                                "description": "Relative path. Must be in double quotes",
                                 "name": "directoryPath",
-                                "parseType": "AnyLiteral"
+                                "parseType": "AnyLiteral",
+                                "baseType": "STRING"
                             }
                         }
                     ],
@@ -1377,6 +1550,7 @@
                                     "values": [
                                         "\"../\""
                                     ],
+                                    "description": "Relative path. Must be in double quotes",
                                     "name": "directoryPath",
                                     "parseType": "AnyLiteral"
                                 }
@@ -1385,7 +1559,8 @@
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -1434,6 +1609,16 @@
                                             "\"../\""
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/deploymentOptions/properties/directoryPath/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Relative path. Must be in double quotes"
+                                    ]
                                 }
                             }
                         }
@@ -1448,13 +1633,14 @@
                     "examples": [
                         {
                             "option": {
-                                "baseType": "LIST",
                                 "values": [
                                     "curator",
                                     "zipkin"
                                 ],
+                                "description": "Must be a list",
                                 "name": "consoleOptions",
-                                "parseType": "ListOfLiterals"
+                                "parseType": "ListOfLiterals",
+                                "baseType": "LIST"
                             }
                         }
                     ],
@@ -1470,20 +1656,22 @@
                             "default": {},
                             "examples": [
                                 {
-                                    "baseType": "LIST",
                                     "values": [
                                         "curator",
                                         "zipkin"
                                     ],
+                                    "description": "Must be a list",
                                     "name": "consoleOptions",
-                                    "parseType": "ListOfLiterals"
+                                    "parseType": "ListOfLiterals",
+                                    "baseType": "LIST"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -1533,6 +1721,16 @@
                                             "zipkin"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/deploymentOptions/properties/consoleOptions/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Must be a list"
+                                    ]
                                 }
                             }
                         }
@@ -1547,12 +1745,13 @@
                     "examples": [
                         {
                             "option": {
-                                "name": "openshiftNamespace",
-                                "parseType": "AnyLiteral",
-                                "baseType": "STRING",
                                 "values": [
                                     "default"
-                                ]
+                                ],
+                                "description": "Applicable only when deploymentType is openshift",
+                                "name": "openshiftNamespace",
+                                "parseType": "AnyLiteral",
+                                "baseType": "STRING"
                             }
                         }
                     ],
@@ -1568,19 +1767,21 @@
                             "default": {},
                             "examples": [
                                 {
-                                    "name": "openshiftNamespace",
-                                    "parseType": "AnyLiteral",
-                                    "baseType": "STRING",
                                     "values": [
                                         "default"
-                                    ]
+                                    ],
+                                    "description": "Applicable only when deploymentType is openshift",
+                                    "name": "openshiftNamespace",
+                                    "parseType": "AnyLiteral",
+                                    "baseType": "STRING"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -1629,6 +1830,16 @@
                                             "default"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/deploymentOptions/properties/openshiftNamespace/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Applicable only when deploymentType is openshift"
+                                    ]
                                 }
                             }
                         }
@@ -1647,6 +1858,7 @@
                                     "ephemeral",
                                     "persistent"
                                 ],
+                                "description": "Applicable only when deploymentType is openshift",
                                 "name": "storageType",
                                 "parseType": "Literal",
                                 "baseType": "STRING"
@@ -1665,20 +1877,22 @@
                             "default": {},
                             "examples": [
                                 {
+                                    "baseType": "STRING",
                                     "values": [
                                         "ephemeral",
                                         "persistent"
                                     ],
+                                    "description": "Applicable only when deploymentType is openshift",
                                     "name": "storageType",
-                                    "parseType": "Literal",
-                                    "baseType": "STRING"
+                                    "parseType": "Literal"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -1728,6 +1942,16 @@
                                             "persistent"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/deploymentOptions/properties/storageType/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Applicable only when deploymentType is openshift"
+                                    ]
                                 }
                             }
                         }

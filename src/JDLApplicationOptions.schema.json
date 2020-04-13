@@ -16,119 +16,40 @@
             "default": {},
             "examples": [
                 {
-                    "clientPackageManager": {
-                        "option": {
-                            "values": [
-                                "npm",
-                                "yarn"
-                            ],
-                            "name": "clientPackageManager",
-                            "parseType": "Literal",
-                            "baseType": "STRING"
-                        }
-                    },
-                    "serviceDiscoveryType": {
-                        "option": {
-                            "baseType": "STRING",
-                            "values": [
-                                "eureka",
-                                "consul",
-                                "no",
-                                "false"
-                            ],
-                            "name": "serviceDiscoveryType",
-                            "parseType": "Literal"
-                        }
-                    },
-                    "dtoSuffix": {
-                        "option": {
-                            "baseType": "STRING",
-                            "values": [
-                                "DTO"
-                            ],
-                            "name": "dtoSuffix",
-                            "parseType": "JavaIdentifierLiteral"
-                        }
-                    },
-                    "jwtSecretKey": {
-                        "option": {
-                            "name": "jwtSecretKey",
-                            "parseType": "Namespace",
-                            "baseType": "STRING",
-                            "values": []
-                        }
-                    },
-                    "websocket": {
-                        "option": {
-                            "values": [
-                                "spring-websocket",
-                                "false"
-                            ],
-                            "name": "websocket",
-                            "parseType": "Literal",
-                            "baseType": "STRING"
-                        }
-                    },
-                    "uaaBaseName": {
-                        "option": {
-                            "values": [
-                                "\"uaa\""
-                            ],
-                            "name": "uaaBaseName",
-                            "parseType": "Literal",
-                            "baseType": "STRING"
-                        }
-                    },
-                    "jhiPrefix": {
-                        "option": {
-                            "values": [
-                                "jhi"
-                            ],
-                            "name": "jhiPrefix",
-                            "parseType": "JavaIdentifierLiteral",
-                            "baseType": "STRING"
-                        }
-                    },
-                    "clientTheme": {
-                        "option": {
-                            "baseType": "STRING",
-                            "values": [
-                                "none"
-                            ],
-                            "name": "clientTheme",
-                            "parseType": "AnyLiteral"
-                        }
-                    },
-                    "nativeLanguage": {
-                        "option": {
-                            "baseType": "STRING",
-                            "values": [
-                                "en"
-                            ],
-                            "name": "nativeLanguage",
-                            "parseType": "LangIsoCode"
-                        }
-                    },
                     "enableSwaggerCodegen": {
                         "option": {
+                            "name": "enableSwaggerCodegen",
+                            "parseType": "Boolean",
                             "baseType": "BOOLEAN",
                             "values": [
                                 "false"
                             ],
-                            "name": "enableSwaggerCodegen",
-                            "parseType": "Boolean"
+                            "description": ""
                         }
                     },
                     "testFrameworks": {
                         "option": {
-                            "name": "testFrameworks",
-                            "parseType": "ListOfLiterals",
                             "baseType": "LIST",
                             "values": [
                                 "protractor",
                                 "cucumber",
                                 "gatling"
-                            ]
+                            ],
+                            "description": "Braces mandatory",
+                            "name": "testFrameworks",
+                            "parseType": "ListOfLiterals"
+                        }
+                    },
+                    "buildTool": {
+                        "option": {
+                            "values": [
+                                "maven",
+                                "gradle"
+                            ],
+                            "description": "",
+                            "name": "buildTool",
+                            "parseType": "Literal",
+                            "baseType": "STRING"
                         }
                     },
                     "skipClient": {
@@ -137,19 +58,9 @@
                             "values": [
                                 "false"
                             ],
+                            "description": "",
                             "name": "skipClient",
                             "parseType": "Boolean"
-                        }
-                    },
-                    "buildTool": {
-                        "option": {
-                            "baseType": "STRING",
-                            "values": [
-                                "maven",
-                                "gradle"
-                            ],
-                            "name": "buildTool",
-                            "parseType": "Literal"
                         }
                     },
                     "skipUserManagement": {
@@ -158,6 +69,7 @@
                             "values": [
                                 "true"
                             ],
+                            "description": "",
                             "name": "skipUserManagement",
                             "parseType": "Boolean"
                         }
@@ -168,6 +80,7 @@
                                 "angularX",
                                 "react"
                             ],
+                            "description": "",
                             "name": "clientFramework",
                             "parseType": "Literal",
                             "baseType": "STRING"
@@ -182,30 +95,19 @@
                                 "session",
                                 "oauth2"
                             ],
+                            "description": "uaa for UAA apps, jwt otherwise",
                             "name": "authenticationType",
                             "parseType": "Literal"
                         }
                     },
                     "baseName": {
                         "option": {
-                            "baseType": "STRING",
                             "values": [
                                 "jhipster"
                             ],
+                            "description": "",
                             "name": "baseName",
-                            "parseType": "AnyLiteral"
-                        }
-                    },
-                    "applicationType": {
-                        "option": {
-                            "values": [
-                                "monolith",
-                                "microservice",
-                                "gateway",
-                                "uaa"
-                            ],
-                            "name": "applicationType",
-                            "parseType": "Literal",
+                            "parseType": "AnyLiteral",
                             "baseType": "STRING"
                         }
                     },
@@ -216,12 +118,28 @@
                                 "kafka",
                                 "false"
                             ],
+                            "description": "",
                             "name": "messageBroker",
+                            "parseType": "Literal"
+                        }
+                    },
+                    "applicationType": {
+                        "option": {
+                            "baseType": "STRING",
+                            "values": [
+                                "monolith",
+                                "microservice",
+                                "gateway",
+                                "uaa"
+                            ],
+                            "description": "",
+                            "name": "applicationType",
                             "parseType": "Literal"
                         }
                     },
                     "databaseType": {
                         "option": {
+                            "baseType": "STRING",
                             "values": [
                                 "sql",
                                 "mongodb",
@@ -229,9 +147,9 @@
                                 "couchbase",
                                 "no"
                             ],
+                            "description": "",
                             "name": "databaseType",
-                            "parseType": "Literal",
-                            "baseType": "STRING"
+                            "parseType": "Literal"
                         }
                     },
                     "serverPort": {
@@ -242,24 +160,13 @@
                                 "8081",
                                 "9999"
                             ],
+                            "description": "Depends on the app type",
                             "name": "serverPort",
                             "parseType": "Number"
                         }
                     },
-                    "enableTranslation": {
-                        "option": {
-                            "baseType": "BOOLEAN",
-                            "values": [
-                                "true"
-                            ],
-                            "name": "enableTranslation",
-                            "parseType": "Boolean"
-                        }
-                    },
                     "devDatabaseType": {
                         "option": {
-                            "name": "devDatabaseType",
-                            "parseType": "Literal",
                             "baseType": "STRING",
                             "values": [
                                 "h2Disk",
@@ -273,26 +180,42 @@
                                 "mongodb",
                                 "cassandra",
                                 "couchbase"
-                            ]
+                            ],
+                            "description": "* + the prod database type",
+                            "name": "devDatabaseType",
+                            "parseType": "Literal"
+                        }
+                    },
+                    "enableTranslation": {
+                        "option": {
+                            "name": "enableTranslation",
+                            "parseType": "Boolean",
+                            "baseType": "BOOLEAN",
+                            "values": [
+                                "true"
+                            ],
+                            "description": ""
                         }
                     },
                     "languages": {
                         "option": {
+                            "baseType": "LIST",
                             "values": [
                                 "en",
                                 "fr"
                             ],
+                            "description": "Braces are mandatory",
                             "name": "languages",
-                            "parseType": "ListOfLangIsoCodes",
-                            "baseType": "LIST"
+                            "parseType": "ListOfLangIsoCodes"
                         }
                     },
                     "packageName": {
                         "option": {
-                            "baseType": "STRING",
                             "values": [],
+                            "description": "Sets the packageFolder option",
                             "name": "packageName",
-                            "parseType": "Namespace"
+                            "parseType": "Namespace",
+                            "baseType": "STRING"
                         }
                     },
                     "skipServer": {
@@ -301,6 +224,7 @@
                             "values": [
                                 "false"
                             ],
+                            "description": "",
                             "name": "skipServer",
                             "parseType": "Boolean"
                         }
@@ -310,6 +234,7 @@
                             "values": [
                                 "primary"
                             ],
+                            "description": "You can put whatever value you want, provided you know it will work (like dark, or light), can also be empty",
                             "name": "clientThemeVariant",
                             "parseType": "AnyLiteral",
                             "baseType": "STRING"
@@ -317,24 +242,27 @@
                     },
                     "enableHibernateCache": {
                         "option": {
-                            "baseType": "BOOLEAN",
                             "values": [
                                 "true"
                             ],
+                            "description": "",
                             "name": "enableHibernateCache",
-                            "parseType": "Boolean"
-                        }
-                    },
-                    "useSass": {
-                        "option": {
-                            "values": [],
-                            "name": "useSass",
                             "parseType": "Boolean",
                             "baseType": "BOOLEAN"
                         }
                     },
+                    "useSass": {
+                        "option": {
+                            "name": "useSass",
+                            "parseType": "Boolean",
+                            "baseType": "BOOLEAN",
+                            "values": [],
+                            "description": ""
+                        }
+                    },
                     "prodDatabaseType": {
                         "option": {
+                            "baseType": "STRING",
                             "values": [
                                 "mysql",
                                 "mariadb",
@@ -346,9 +274,9 @@
                                 "cassandra",
                                 "couchbase"
                             ],
+                            "description": "",
                             "name": "prodDatabaseType",
-                            "parseType": "Literal",
-                            "baseType": "STRING"
+                            "parseType": "Literal"
                         }
                     },
                     "reactive": {
@@ -356,6 +284,7 @@
                             "values": [
                                 "false"
                             ],
+                            "description": "",
                             "name": "reactive",
                             "parseType": "Boolean",
                             "baseType": "BOOLEAN"
@@ -363,23 +292,25 @@
                     },
                     "searchEngine": {
                         "option": {
+                            "baseType": "STRING",
                             "values": [
                                 "elasticsearch",
                                 "false"
                             ],
+                            "description": "",
                             "name": "searchEngine",
-                            "parseType": "Literal",
-                            "baseType": "STRING"
+                            "parseType": "Literal"
                         }
                     },
                     "entitySuffix": {
                         "option": {
+                            "name": "entitySuffix",
+                            "parseType": "JavaIdentifierLiteral",
+                            "baseType": "STRING",
                             "values": [
                                 "Entity"
                             ],
-                            "name": "entitySuffix",
-                            "parseType": "JavaIdentifierLiteral",
-                            "baseType": "STRING"
+                            "description": "Suffix for entities. false for empty string"
                         }
                     },
                     "cacheProvider": {
@@ -394,8 +325,111 @@
                                 "redis",
                                 "no"
                             ],
+                            "description": "ehcache for monoliths and gateways, hazelcast otherwise",
                             "name": "cacheProvider",
                             "parseType": "Literal"
+                        }
+                    },
+                    "clientPackageManager": {
+                        "option": {
+                            "baseType": "STRING",
+                            "values": [
+                                "npm",
+                                "yarn"
+                            ],
+                            "description": "",
+                            "name": "clientPackageManager",
+                            "parseType": "Literal"
+                        }
+                    },
+                    "serviceDiscoveryType": {
+                        "option": {
+                            "values": [
+                                "eureka",
+                                "consul",
+                                "no",
+                                "false"
+                            ],
+                            "description": "",
+                            "name": "serviceDiscoveryType",
+                            "parseType": "Literal",
+                            "baseType": "STRING"
+                        }
+                    },
+                    "dtoSuffix": {
+                        "option": {
+                            "baseType": "STRING",
+                            "values": [
+                                "DTO"
+                            ],
+                            "description": "Suffix for DTOs. false for empty string",
+                            "name": "dtoSuffix",
+                            "parseType": "JavaIdentifierLiteral"
+                        }
+                    },
+                    "jwtSecretKey": {
+                        "option": {
+                            "values": [],
+                            "description": "",
+                            "name": "jwtSecretKey",
+                            "parseType": "Namespace",
+                            "baseType": "STRING"
+                        }
+                    },
+                    "uaaBaseName": {
+                        "option": {
+                            "baseType": "STRING",
+                            "values": [
+                                "\"uaa\""
+                            ],
+                            "description": "Mandatory for gateway and microservices if auth type is uaa, must be between double-quotes",
+                            "name": "uaaBaseName",
+                            "parseType": "Literal"
+                        }
+                    },
+                    "websocket": {
+                        "option": {
+                            "values": [
+                                "spring-websocket",
+                                "false"
+                            ],
+                            "description": "",
+                            "name": "websocket",
+                            "parseType": "Literal",
+                            "baseType": "STRING"
+                        }
+                    },
+                    "jhiPrefix": {
+                        "option": {
+                            "values": [
+                                "jhi"
+                            ],
+                            "description": "",
+                            "name": "jhiPrefix",
+                            "parseType": "JavaIdentifierLiteral",
+                            "baseType": "STRING"
+                        }
+                    },
+                    "clientTheme": {
+                        "option": {
+                            "baseType": "STRING",
+                            "values": [
+                                "none"
+                            ],
+                            "description": "You can put whatever value you want, provided you know it will work (like yeti)",
+                            "name": "clientTheme",
+                            "parseType": "AnyLiteral"
+                        }
+                    },
+                    "nativeLanguage": {
+                        "option": {
+                            "values": [
+                                "en"
+                            ],
+                            "description": "",
+                            "name": "nativeLanguage",
+                            "parseType": "LangIsoCode",
+                            "baseType": "STRING"
                         }
                     }
                 }
@@ -454,7 +488,8 @@
                                     "microservice",
                                     "gateway",
                                     "uaa"
-                                ]
+                                ],
+                                "description": ""
                             }
                         }
                     ],
@@ -477,6 +512,7 @@
                                         "gateway",
                                         "uaa"
                                     ],
+                                    "description": "",
                                     "name": "applicationType",
                                     "parseType": "Literal"
                                 }
@@ -485,7 +521,8 @@
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -537,6 +574,16 @@
                                             "uaa"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/applicationType/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -554,6 +601,7 @@
                                 "values": [
                                     "Entity"
                                 ],
+                                "description": "Suffix for entities. false for empty string",
                                 "name": "entitySuffix",
                                 "parseType": "JavaIdentifierLiteral",
                                 "baseType": "STRING"
@@ -572,19 +620,21 @@
                             "default": {},
                             "examples": [
                                 {
-                                    "baseType": "STRING",
                                     "values": [
                                         "Entity"
                                     ],
+                                    "description": "Suffix for entities. false for empty string",
                                     "name": "entitySuffix",
-                                    "parseType": "JavaIdentifierLiteral"
+                                    "parseType": "JavaIdentifierLiteral",
+                                    "baseType": "STRING"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -633,6 +683,16 @@
                                             "Entity"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/entitySuffix/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Suffix for entities. false for empty string"
+                                    ]
                                 }
                             }
                         }
@@ -654,6 +714,7 @@
                                     "no",
                                     "false"
                                 ],
+                                "description": "",
                                 "name": "serviceDiscoveryType",
                                 "parseType": "Literal"
                             }
@@ -671,22 +732,24 @@
                             "default": {},
                             "examples": [
                                 {
+                                    "name": "serviceDiscoveryType",
+                                    "parseType": "Literal",
+                                    "baseType": "STRING",
                                     "values": [
                                         "eureka",
                                         "consul",
                                         "no",
                                         "false"
                                     ],
-                                    "name": "serviceDiscoveryType",
-                                    "parseType": "Literal",
-                                    "baseType": "STRING"
+                                    "description": ""
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -738,6 +801,16 @@
                                             "false"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/serviceDiscoveryType/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -752,6 +825,8 @@
                     "examples": [
                         {
                             "option": {
+                                "name": "devDatabaseType",
+                                "parseType": "Literal",
                                 "baseType": "STRING",
                                 "values": [
                                     "h2Disk",
@@ -766,8 +841,7 @@
                                     "cassandra",
                                     "couchbase"
                                 ],
-                                "name": "devDatabaseType",
-                                "parseType": "Literal"
+                                "description": "* + the prod database type"
                             }
                         }
                     ],
@@ -783,7 +857,6 @@
                             "default": {},
                             "examples": [
                                 {
-                                    "baseType": "STRING",
                                     "values": [
                                         "h2Disk",
                                         "h2Memory",
@@ -797,15 +870,18 @@
                                         "cassandra",
                                         "couchbase"
                                     ],
+                                    "description": "* + the prod database type",
                                     "name": "devDatabaseType",
-                                    "parseType": "Literal"
+                                    "parseType": "Literal",
+                                    "baseType": "STRING"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -864,6 +940,16 @@
                                             "couchbase"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/devDatabaseType/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "* + the prod database type"
+                                    ]
                                 }
                             }
                         }
@@ -884,6 +970,7 @@
                                     "cucumber",
                                     "gatling"
                                 ],
+                                "description": "Braces mandatory",
                                 "name": "testFrameworks",
                                 "parseType": "ListOfLiterals"
                             }
@@ -901,21 +988,23 @@
                             "default": {},
                             "examples": [
                                 {
+                                    "baseType": "LIST",
                                     "values": [
                                         "protractor",
                                         "cucumber",
                                         "gatling"
                                     ],
+                                    "description": "Braces mandatory",
                                     "name": "testFrameworks",
-                                    "parseType": "ListOfLiterals",
-                                    "baseType": "LIST"
+                                    "parseType": "ListOfLiterals"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -966,6 +1055,16 @@
                                             "gatling"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/testFrameworks/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Braces mandatory"
+                                    ]
                                 }
                             }
                         }
@@ -983,6 +1082,7 @@
                                 "values": [
                                     "primary"
                                 ],
+                                "description": "You can put whatever value you want, provided you know it will work (like dark, or light), can also be empty",
                                 "name": "clientThemeVariant",
                                 "parseType": "AnyLiteral",
                                 "baseType": "STRING"
@@ -1004,6 +1104,7 @@
                                     "values": [
                                         "primary"
                                     ],
+                                    "description": "You can put whatever value you want, provided you know it will work (like dark, or light), can also be empty",
                                     "name": "clientThemeVariant",
                                     "parseType": "AnyLiteral",
                                     "baseType": "STRING"
@@ -1013,7 +1114,8 @@
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -1062,6 +1164,16 @@
                                             "primary"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/clientThemeVariant/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "You can put whatever value you want, provided you know it will work (like dark, or light), can also be empty"
+                                    ]
                                 }
                             }
                         }
@@ -1076,12 +1188,13 @@
                     "examples": [
                         {
                             "option": {
+                                "name": "dtoSuffix",
+                                "parseType": "JavaIdentifierLiteral",
                                 "baseType": "STRING",
                                 "values": [
                                     "DTO"
                                 ],
-                                "name": "dtoSuffix",
-                                "parseType": "JavaIdentifierLiteral"
+                                "description": "Suffix for DTOs. false for empty string"
                             }
                         }
                     ],
@@ -1101,6 +1214,7 @@
                                     "values": [
                                         "DTO"
                                     ],
+                                    "description": "Suffix for DTOs. false for empty string",
                                     "name": "dtoSuffix",
                                     "parseType": "JavaIdentifierLiteral"
                                 }
@@ -1109,7 +1223,8 @@
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -1158,6 +1273,16 @@
                                             "DTO"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/dtoSuffix/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Suffix for DTOs. false for empty string"
+                                    ]
                                 }
                             }
                         }
@@ -1172,12 +1297,13 @@
                     "examples": [
                         {
                             "option": {
+                                "name": "nativeLanguage",
+                                "parseType": "LangIsoCode",
                                 "baseType": "STRING",
                                 "values": [
                                     "en"
                                 ],
-                                "name": "nativeLanguage",
-                                "parseType": "LangIsoCode"
+                                "description": ""
                             }
                         }
                     ],
@@ -1193,19 +1319,21 @@
                             "default": {},
                             "examples": [
                                 {
-                                    "name": "nativeLanguage",
-                                    "parseType": "LangIsoCode",
-                                    "baseType": "STRING",
                                     "values": [
                                         "en"
-                                    ]
+                                    ],
+                                    "description": "",
+                                    "name": "nativeLanguage",
+                                    "parseType": "LangIsoCode",
+                                    "baseType": "STRING"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -1254,6 +1382,16 @@
                                             "en"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/nativeLanguage/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -1270,6 +1408,7 @@
                             "option": {
                                 "baseType": "STRING",
                                 "values": [],
+                                "description": "",
                                 "name": "jwtSecretKey",
                                 "parseType": "Namespace"
                             }
@@ -1289,6 +1428,7 @@
                                 {
                                     "baseType": "STRING",
                                     "values": [],
+                                    "description": "",
                                     "name": "jwtSecretKey",
                                     "parseType": "Namespace"
                                 }
@@ -1297,7 +1437,8 @@
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -1336,6 +1477,16 @@
                                     "title": "The Values Schema",
                                     "description": "An explanation about the purpose of this instance.",
                                     "default": []
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/jwtSecretKey/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -1355,6 +1506,7 @@
                                     "8081",
                                     "9999"
                                 ],
+                                "description": "Depends on the app type",
                                 "name": "serverPort",
                                 "parseType": "Number",
                                 "baseType": "INTEGER"
@@ -1373,21 +1525,23 @@
                             "default": {},
                             "examples": [
                                 {
-                                    "baseType": "INTEGER",
                                     "values": [
                                         "8080",
                                         "8081",
                                         "9999"
                                     ],
+                                    "description": "Depends on the app type",
                                     "name": "serverPort",
-                                    "parseType": "Number"
+                                    "parseType": "Number",
+                                    "baseType": "INTEGER"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -1438,6 +1592,16 @@
                                             "9999"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/serverPort/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Depends on the app type"
+                                    ]
                                 }
                             }
                         }
@@ -1456,6 +1620,7 @@
                                 "values": [
                                     "false"
                                 ],
+                                "description": "",
                                 "name": "skipClient",
                                 "parseType": "Boolean"
                             }
@@ -1477,6 +1642,7 @@
                                     "values": [
                                         "false"
                                     ],
+                                    "description": "",
                                     "name": "skipClient",
                                     "parseType": "Boolean"
                                 }
@@ -1485,7 +1651,8 @@
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -1534,6 +1701,16 @@
                                             "false"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/skipClient/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -1553,6 +1730,7 @@
                                     "kafka",
                                     "false"
                                 ],
+                                "description": "",
                                 "name": "messageBroker",
                                 "parseType": "Literal"
                             }
@@ -1570,20 +1748,22 @@
                             "default": {},
                             "examples": [
                                 {
-                                    "baseType": "STRING",
                                     "values": [
                                         "kafka",
                                         "false"
                                     ],
+                                    "description": "",
                                     "name": "messageBroker",
-                                    "parseType": "Literal"
+                                    "parseType": "Literal",
+                                    "baseType": "STRING"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -1633,6 +1813,16 @@
                                             "false"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/messageBroker/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -1647,6 +1837,7 @@
                     "examples": [
                         {
                             "option": {
+                                "baseType": "STRING",
                                 "values": [
                                     "ehcache",
                                     "hazelcast",
@@ -1656,9 +1847,9 @@
                                     "redis",
                                     "no"
                                 ],
+                                "description": "ehcache for monoliths and gateways, hazelcast otherwise",
                                 "name": "cacheProvider",
-                                "parseType": "Literal",
-                                "baseType": "STRING"
+                                "parseType": "Literal"
                             }
                         }
                     ],
@@ -1674,6 +1865,7 @@
                             "default": {},
                             "examples": [
                                 {
+                                    "baseType": "STRING",
                                     "values": [
                                         "ehcache",
                                         "hazelcast",
@@ -1683,16 +1875,17 @@
                                         "redis",
                                         "no"
                                     ],
+                                    "description": "ehcache for monoliths and gateways, hazelcast otherwise",
                                     "name": "cacheProvider",
-                                    "parseType": "Literal",
-                                    "baseType": "STRING"
+                                    "parseType": "Literal"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -1747,6 +1940,16 @@
                                             "no"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/cacheProvider/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "ehcache for monoliths and gateways, hazelcast otherwise"
+                                    ]
                                 }
                             }
                         }
@@ -1761,13 +1964,14 @@
                     "examples": [
                         {
                             "option": {
-                                "name": "websocket",
-                                "parseType": "Literal",
-                                "baseType": "STRING",
                                 "values": [
                                     "spring-websocket",
                                     "false"
-                                ]
+                                ],
+                                "description": "",
+                                "name": "websocket",
+                                "parseType": "Literal",
+                                "baseType": "STRING"
                             }
                         }
                     ],
@@ -1783,20 +1987,22 @@
                             "default": {},
                             "examples": [
                                 {
+                                    "baseType": "STRING",
                                     "values": [
                                         "spring-websocket",
                                         "false"
                                     ],
+                                    "description": "",
                                     "name": "websocket",
-                                    "parseType": "Literal",
-                                    "baseType": "STRING"
+                                    "parseType": "Literal"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -1846,6 +2052,16 @@
                                             "false"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/websocket/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -1860,13 +2076,14 @@
                     "examples": [
                         {
                             "option": {
-                                "baseType": "STRING",
                                 "values": [
                                     "maven",
                                     "gradle"
                                 ],
+                                "description": "",
                                 "name": "buildTool",
-                                "parseType": "Literal"
+                                "parseType": "Literal",
+                                "baseType": "STRING"
                             }
                         }
                     ],
@@ -1882,20 +2099,22 @@
                             "default": {},
                             "examples": [
                                 {
-                                    "baseType": "STRING",
                                     "values": [
                                         "maven",
                                         "gradle"
                                     ],
+                                    "description": "",
                                     "name": "buildTool",
-                                    "parseType": "Literal"
+                                    "parseType": "Literal",
+                                    "baseType": "STRING"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -1945,6 +2164,16 @@
                                             "gradle"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/buildTool/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -1960,6 +2189,7 @@
                         {
                             "option": {
                                 "values": [],
+                                "description": "Sets the packageFolder option",
                                 "name": "packageName",
                                 "parseType": "Namespace",
                                 "baseType": "STRING"
@@ -1978,17 +2208,19 @@
                             "default": {},
                             "examples": [
                                 {
+                                    "name": "packageName",
+                                    "parseType": "Namespace",
                                     "baseType": "STRING",
                                     "values": [],
-                                    "name": "packageName",
-                                    "parseType": "Namespace"
+                                    "description": "Sets the packageFolder option"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -2027,6 +2259,16 @@
                                     "title": "The Values Schema",
                                     "description": "An explanation about the purpose of this instance.",
                                     "default": []
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/packageName/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Sets the packageFolder option"
+                                    ]
                                 }
                             }
                         }
@@ -2053,6 +2295,7 @@
                                     "cassandra",
                                     "couchbase"
                                 ],
+                                "description": "",
                                 "name": "prodDatabaseType",
                                 "parseType": "Literal"
                             }
@@ -2070,7 +2313,6 @@
                             "default": {},
                             "examples": [
                                 {
-                                    "baseType": "STRING",
                                     "values": [
                                         "mysql",
                                         "mariadb",
@@ -2082,15 +2324,18 @@
                                         "cassandra",
                                         "couchbase"
                                     ],
+                                    "description": "",
                                     "name": "prodDatabaseType",
-                                    "parseType": "Literal"
+                                    "parseType": "Literal",
+                                    "baseType": "STRING"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -2147,6 +2392,16 @@
                                             "couchbase"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/prodDatabaseType/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -2161,12 +2416,13 @@
                     "examples": [
                         {
                             "option": {
-                                "name": "baseName",
-                                "parseType": "AnyLiteral",
                                 "baseType": "STRING",
                                 "values": [
                                     "jhipster"
-                                ]
+                                ],
+                                "description": "",
+                                "name": "baseName",
+                                "parseType": "AnyLiteral"
                             }
                         }
                     ],
@@ -2185,6 +2441,7 @@
                                     "values": [
                                         "jhipster"
                                     ],
+                                    "description": "",
                                     "name": "baseName",
                                     "parseType": "AnyLiteral",
                                     "baseType": "STRING"
@@ -2194,7 +2451,8 @@
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -2243,6 +2501,16 @@
                                             "jhipster"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/baseName/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -2262,7 +2530,8 @@
                                 "baseType": "BOOLEAN",
                                 "values": [
                                     "true"
-                                ]
+                                ],
+                                "description": ""
                             }
                         }
                     ],
@@ -2278,19 +2547,21 @@
                             "default": {},
                             "examples": [
                                 {
+                                    "name": "skipUserManagement",
+                                    "parseType": "Boolean",
                                     "baseType": "BOOLEAN",
                                     "values": [
                                         "true"
                                     ],
-                                    "name": "skipUserManagement",
-                                    "parseType": "Boolean"
+                                    "description": ""
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -2339,6 +2610,16 @@
                                             "true"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/skipUserManagement/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -2357,6 +2638,7 @@
                                 "values": [
                                     "true"
                                 ],
+                                "description": "",
                                 "name": "enableTranslation",
                                 "parseType": "Boolean"
                             }
@@ -2378,6 +2660,7 @@
                                     "values": [
                                         "true"
                                     ],
+                                    "description": "",
                                     "name": "enableTranslation",
                                     "parseType": "Boolean"
                                 }
@@ -2386,7 +2669,8 @@
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -2435,6 +2719,16 @@
                                             "true"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/enableTranslation/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -2449,13 +2743,14 @@
                     "examples": [
                         {
                             "option": {
+                                "name": "languages",
+                                "parseType": "ListOfLangIsoCodes",
                                 "baseType": "LIST",
                                 "values": [
                                     "en",
                                     "fr"
                                 ],
-                                "name": "languages",
-                                "parseType": "ListOfLangIsoCodes"
+                                "description": "Braces are mandatory"
                             }
                         }
                     ],
@@ -2475,6 +2770,7 @@
                                         "en",
                                         "fr"
                                     ],
+                                    "description": "Braces are mandatory",
                                     "name": "languages",
                                     "parseType": "ListOfLangIsoCodes",
                                     "baseType": "LIST"
@@ -2484,7 +2780,8 @@
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -2534,6 +2831,16 @@
                                             "fr"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/languages/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Braces are mandatory"
+                                    ]
                                 }
                             }
                         }
@@ -2552,6 +2859,7 @@
                                     "elasticsearch",
                                     "false"
                                 ],
+                                "description": "",
                                 "name": "searchEngine",
                                 "parseType": "Literal",
                                 "baseType": "STRING"
@@ -2570,20 +2878,22 @@
                             "default": {},
                             "examples": [
                                 {
+                                    "baseType": "STRING",
                                     "values": [
                                         "elasticsearch",
                                         "false"
                                     ],
+                                    "description": "",
                                     "name": "searchEngine",
-                                    "parseType": "Literal",
-                                    "baseType": "STRING"
+                                    "parseType": "Literal"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -2633,6 +2943,16 @@
                                             "false"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/searchEngine/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -2647,12 +2967,13 @@
                     "examples": [
                         {
                             "option": {
+                                "name": "jhiPrefix",
+                                "parseType": "JavaIdentifierLiteral",
                                 "baseType": "STRING",
                                 "values": [
                                     "jhi"
                                 ],
-                                "name": "jhiPrefix",
-                                "parseType": "JavaIdentifierLiteral"
+                                "description": ""
                             }
                         }
                     ],
@@ -2668,19 +2989,21 @@
                             "default": {},
                             "examples": [
                                 {
-                                    "baseType": "STRING",
                                     "values": [
                                         "jhi"
                                     ],
+                                    "description": "",
                                     "name": "jhiPrefix",
-                                    "parseType": "JavaIdentifierLiteral"
+                                    "parseType": "JavaIdentifierLiteral",
+                                    "baseType": "STRING"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -2729,6 +3052,16 @@
                                             "jhi"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/jhiPrefix/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -2743,13 +3076,14 @@
                     "examples": [
                         {
                             "option": {
+                                "baseType": "STRING",
                                 "values": [
                                     "npm",
                                     "yarn"
                                 ],
+                                "description": "",
                                 "name": "clientPackageManager",
-                                "parseType": "Literal",
-                                "baseType": "STRING"
+                                "parseType": "Literal"
                             }
                         }
                     ],
@@ -2765,20 +3099,22 @@
                             "default": {},
                             "examples": [
                                 {
-                                    "baseType": "STRING",
                                     "values": [
                                         "npm",
                                         "yarn"
                                     ],
+                                    "description": "",
                                     "name": "clientPackageManager",
-                                    "parseType": "Literal"
+                                    "parseType": "Literal",
+                                    "baseType": "STRING"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -2828,6 +3164,16 @@
                                             "yarn"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/clientPackageManager/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -2842,16 +3188,17 @@
                     "examples": [
                         {
                             "option": {
-                                "name": "databaseType",
-                                "parseType": "Literal",
-                                "baseType": "STRING",
                                 "values": [
                                     "sql",
                                     "mongodb",
                                     "cassandra",
                                     "couchbase",
                                     "no"
-                                ]
+                                ],
+                                "description": "",
+                                "name": "databaseType",
+                                "parseType": "Literal",
+                                "baseType": "STRING"
                             }
                         }
                     ],
@@ -2867,6 +3214,7 @@
                             "default": {},
                             "examples": [
                                 {
+                                    "baseType": "STRING",
                                     "values": [
                                         "sql",
                                         "mongodb",
@@ -2874,16 +3222,17 @@
                                         "couchbase",
                                         "no"
                                     ],
+                                    "description": "",
                                     "name": "databaseType",
-                                    "parseType": "Literal",
-                                    "baseType": "STRING"
+                                    "parseType": "Literal"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -2936,6 +3285,16 @@
                                             "no"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/databaseType/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -2950,12 +3309,13 @@
                     "examples": [
                         {
                             "option": {
+                                "name": "uaaBaseName",
+                                "parseType": "Literal",
+                                "baseType": "STRING",
                                 "values": [
                                     "\"uaa\""
                                 ],
-                                "name": "uaaBaseName",
-                                "parseType": "Literal",
-                                "baseType": "STRING"
+                                "description": "Mandatory for gateway and microservices if auth type is uaa, must be between double-quotes"
                             }
                         }
                     ],
@@ -2975,6 +3335,7 @@
                                     "values": [
                                         "\"uaa\""
                                     ],
+                                    "description": "Mandatory for gateway and microservices if auth type is uaa, must be between double-quotes",
                                     "name": "uaaBaseName",
                                     "parseType": "Literal"
                                 }
@@ -2983,7 +3344,8 @@
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -3032,6 +3394,16 @@
                                             "\"uaa\""
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/uaaBaseName/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Mandatory for gateway and microservices if auth type is uaa, must be between double-quotes"
+                                    ]
                                 }
                             }
                         }
@@ -3049,6 +3421,7 @@
                                 "values": [
                                     "false"
                                 ],
+                                "description": "",
                                 "name": "reactive",
                                 "parseType": "Boolean",
                                 "baseType": "BOOLEAN"
@@ -3071,6 +3444,7 @@
                                     "values": [
                                         "false"
                                     ],
+                                    "description": "",
                                     "name": "reactive",
                                     "parseType": "Boolean"
                                 }
@@ -3079,7 +3453,8 @@
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -3128,6 +3503,16 @@
                                             "false"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/reactive/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -3142,12 +3527,13 @@
                     "examples": [
                         {
                             "option": {
-                                "baseType": "BOOLEAN",
                                 "values": [
                                     "false"
                                 ],
+                                "description": "",
                                 "name": "enableSwaggerCodegen",
-                                "parseType": "Boolean"
+                                "parseType": "Boolean",
+                                "baseType": "BOOLEAN"
                             }
                         }
                     ],
@@ -3163,19 +3549,21 @@
                             "default": {},
                             "examples": [
                                 {
+                                    "baseType": "BOOLEAN",
                                     "values": [
                                         "false"
                                     ],
+                                    "description": "",
                                     "name": "enableSwaggerCodegen",
-                                    "parseType": "Boolean",
-                                    "baseType": "BOOLEAN"
+                                    "parseType": "Boolean"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -3224,6 +3612,16 @@
                                             "false"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/enableSwaggerCodegen/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -3238,12 +3636,13 @@
                     "examples": [
                         {
                             "option": {
-                                "name": "skipServer",
-                                "parseType": "Boolean",
                                 "baseType": "BOOLEAN",
                                 "values": [
                                     "false"
-                                ]
+                                ],
+                                "description": "",
+                                "name": "skipServer",
+                                "parseType": "Boolean"
                             }
                         }
                     ],
@@ -3259,19 +3658,21 @@
                             "default": {},
                             "examples": [
                                 {
-                                    "baseType": "BOOLEAN",
                                     "values": [
                                         "false"
                                     ],
+                                    "description": "",
                                     "name": "skipServer",
-                                    "parseType": "Boolean"
+                                    "parseType": "Boolean",
+                                    "baseType": "BOOLEAN"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -3320,6 +3721,16 @@
                                             "false"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/skipServer/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -3339,6 +3750,7 @@
                                     "angularX",
                                     "react"
                                 ],
+                                "description": "",
                                 "name": "clientFramework",
                                 "parseType": "Literal"
                             }
@@ -3356,20 +3768,22 @@
                             "default": {},
                             "examples": [
                                 {
+                                    "name": "clientFramework",
+                                    "parseType": "Literal",
+                                    "baseType": "STRING",
                                     "values": [
                                         "angularX",
                                         "react"
                                     ],
-                                    "name": "clientFramework",
-                                    "parseType": "Literal",
-                                    "baseType": "STRING"
+                                    "description": ""
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -3419,6 +3833,16 @@
                                             "react"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/clientFramework/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -3437,6 +3861,7 @@
                                 "values": [
                                     "true"
                                 ],
+                                "description": "",
                                 "name": "enableHibernateCache",
                                 "parseType": "Boolean"
                             }
@@ -3454,19 +3879,21 @@
                             "default": {},
                             "examples": [
                                 {
+                                    "name": "enableHibernateCache",
+                                    "parseType": "Boolean",
                                     "baseType": "BOOLEAN",
                                     "values": [
                                         "true"
                                     ],
-                                    "name": "enableHibernateCache",
-                                    "parseType": "Boolean"
+                                    "description": ""
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -3515,6 +3942,16 @@
                                             "true"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/enableHibernateCache/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -3529,10 +3966,11 @@
                     "examples": [
                         {
                             "option": {
+                                "name": "useSass",
+                                "parseType": "Boolean",
                                 "baseType": "BOOLEAN",
                                 "values": [],
-                                "name": "useSass",
-                                "parseType": "Boolean"
+                                "description": ""
                             }
                         }
                     ],
@@ -3548,17 +3986,19 @@
                             "default": {},
                             "examples": [
                                 {
-                                    "name": "useSass",
-                                    "parseType": "Boolean",
                                     "baseType": "BOOLEAN",
-                                    "values": []
+                                    "values": [],
+                                    "description": "",
+                                    "name": "useSass",
+                                    "parseType": "Boolean"
                                 }
                             ],
                             "required": [
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -3597,6 +4037,16 @@
                                     "title": "The Values Schema",
                                     "description": "An explanation about the purpose of this instance.",
                                     "default": []
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/useSass/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        ""
+                                    ]
                                 }
                             }
                         }
@@ -3618,6 +4068,7 @@
                                     "session",
                                     "oauth2"
                                 ],
+                                "description": "uaa for UAA apps, jwt otherwise",
                                 "name": "authenticationType",
                                 "parseType": "Literal"
                             }
@@ -3642,6 +4093,7 @@
                                         "session",
                                         "oauth2"
                                     ],
+                                    "description": "uaa for UAA apps, jwt otherwise",
                                     "name": "authenticationType",
                                     "parseType": "Literal"
                                 }
@@ -3650,7 +4102,8 @@
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -3702,6 +4155,16 @@
                                             "oauth2"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/authenticationType/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "uaa for UAA apps, jwt otherwise"
+                                    ]
                                 }
                             }
                         }
@@ -3716,12 +4179,13 @@
                     "examples": [
                         {
                             "option": {
+                                "baseType": "STRING",
                                 "values": [
                                     "none"
                                 ],
+                                "description": "You can put whatever value you want, provided you know it will work (like yeti)",
                                 "name": "clientTheme",
-                                "parseType": "AnyLiteral",
-                                "baseType": "STRING"
+                                "parseType": "AnyLiteral"
                             }
                         }
                     ],
@@ -3740,6 +4204,7 @@
                                     "values": [
                                         "none"
                                     ],
+                                    "description": "You can put whatever value you want, provided you know it will work (like yeti)",
                                     "name": "clientTheme",
                                     "parseType": "AnyLiteral",
                                     "baseType": "STRING"
@@ -3749,7 +4214,8 @@
                                 "name",
                                 "baseType",
                                 "parseType",
-                                "values"
+                                "values",
+                                "description"
                             ],
                             "properties": {
                                 "name": {
@@ -3798,6 +4264,16 @@
                                             "none"
                                         ]
                                     }
+                                },
+                                "description": {
+                                    "$id": "#/properties/applicationOptions/properties/clientTheme/properties/option/properties/description",
+                                    "type": "string",
+                                    "title": "The Description Schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "You can put whatever value you want, provided you know it will work (like yeti)"
+                                    ]
                                 }
                             }
                         }
