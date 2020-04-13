@@ -11,14 +11,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
- 	 - name: Checkout
-       uses: actions/checkout@v2
+ 	- name: Checkout
+      uses: actions/checkout@v2
 
-     - name: Setup Node.js environment
-       uses: actions/setup-node@v1.4.1
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v1.4.1
 
-     - name: Change permission
-       run: chmod +x ./scripts/validate.sh
+    - name: Change permission
+      run: chmod +x ./scripts/validate.sh
 
-     - name: Execute script
-       run: ./scripts/validate.sh
+    - name: Execute script
+      run: ./scripts/validate.sh
