@@ -25,4 +25,5 @@ jobs:
     # setup nod
     - name: Setup Node.js environment
       uses: actions/setup-node@v1.4.1
+    - run: chmod +x ./scripts/validate.sh
     - run: ./scripts/validate.sh
