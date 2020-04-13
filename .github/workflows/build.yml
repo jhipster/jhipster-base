@@ -15,4 +15,4 @@ jobs:
       -  name: Setup Node.js environment
          uses: actions/setup-node@v1.4.1
       -  name: Execute script
-         run: sh ./scripts/validate.sh
+         run: sh ./scripts/validate.sh 
