@@ -10,7 +10,8 @@
           "microservice",
           "gateway",
           "uaa"
-        ]
+        ],
+        "description": ""
       }
     },
     "entitySuffix": {
@@ -20,7 +21,8 @@
         "parseType": "JavaIdentifierLiteral",
         "values": [
           "Entity"
-        ]
+        ],
+        "description": "Suffix for entities. false for empty string"
       }
     },
     "serviceDiscoveryType": {
@@ -33,7 +35,8 @@
           "consul",
           "no",
           "false"
-        ]
+        ],
+        "description": ""
       }
     },
     "devDatabaseType": {
@@ -53,7 +56,8 @@
           "mongodb",
           "cassandra",
           "couchbase"
-        ]
+        ],
+        "description": "* + the prod database type"
       }
     },
     "testFrameworks": {
@@ -65,7 +69,8 @@
           "protractor",
           "cucumber",
           "gatling"
-        ]
+        ],
+        "description": "Braces mandatory"
       }
     },
     "clientThemeVariant": {
@@ -75,7 +80,8 @@
         "parseType": "AnyLiteral",
         "values": [
           "primary"
-        ]
+        ],
+        "description": "You can put whatever value you want, provided you know it will work (like dark, or light), can also be empty"
       }
     },
     "dtoSuffix": {
@@ -85,7 +91,8 @@
         "parseType": "JavaIdentifierLiteral",
         "values": [
           "DTO"
-        ]
+        ],
+        "description": "Suffix for DTOs. false for empty string"
       }
     },
     "nativeLanguage": {
@@ -95,7 +102,8 @@
         "parseType": "LangIsoCode",
         "values": [
           "en"
-        ]
+        ],
+        "description": ""
       }
     },
     "jwtSecretKey": {
@@ -103,7 +111,8 @@
         "name": "jwtSecretKey",
         "baseType": "STRING",
         "parseType": "Namespace",
-        "values": []
+        "values": [],
+        "description": ""
       }
     },
     "serverPort": {
@@ -115,7 +124,8 @@
           "8080",
           "8081",
           "9999"
-        ]
+        ],
+        "description": "Depends on the app type"
       }
     },
     "skipClient": {
@@ -125,7 +135,8 @@
         "parseType": "Boolean",
         "values": [
           "false"
-        ]
+        ],
+        "description": ""
       }
     },
     "messageBroker": {
@@ -136,7 +147,8 @@
         "values": [
           "kafka",
           "false"
-        ]
+        ],
+        "description": ""
       }
     },
     "cacheProvider": {
@@ -152,7 +164,8 @@
           "memcached",
           "redis",
           "no"
-        ]
+        ],
+        "description": "ehcache for monoliths and gateways, hazelcast otherwise"
       }
     },
     "websocket": {
@@ -163,7 +176,8 @@
         "values": [
           "spring-websocket",
           "false"
-        ]
+        ],
+        "description": ""
       }
     },
     "buildTool": {
@@ -174,7 +188,8 @@
         "values": [
           "maven",
           "gradle"
-        ]
+        ],
+        "description": ""
       }
     },
     "packageName": {
@@ -182,7 +197,8 @@
         "name": "packageName",
         "baseType": "STRING",
         "parseType": "Namespace",
-        "values": []
+        "values": [],
+        "description": "Sets the packageFolder option"
       }
     },
     "prodDatabaseType": {
@@ -200,7 +216,8 @@
           "mongodb",
           "cassandra",
           "couchbase"
-        ]
+        ],
+        "description": ""
       }
     },
     "baseName": {
@@ -210,7 +227,8 @@
         "parseType": "AnyLiteral",
         "values": [
           "jhipster"
-        ]
+        ],
+        "description": ""
       }
     },
     "skipUserManagement": {
@@ -220,7 +238,8 @@
         "parseType": "Boolean",
         "values": [
           "true"
-        ]
+        ],
+        "description": ""
       }
     },
     "enableTranslation": {
@@ -230,7 +249,8 @@
         "parseType": "Boolean",
         "values": [
           "true"
-        ]
+        ],
+        "description": ""
       }
     },
     "languages": {
@@ -241,7 +261,8 @@
         "values": [
           "en",
           "fr"
-        ]
+        ],
+        "description": "Braces are mandatory"
       }
     },
     "searchEngine": {
@@ -252,7 +273,8 @@
         "values": [
           "elasticsearch",
           "false"
-        ]
+        ],
+        "description": ""
       }
     },
     "jhiPrefix": {
@@ -262,7 +284,8 @@
         "parseType": "JavaIdentifierLiteral",
         "values": [
           "jhi"
-        ]
+        ],
+        "description": ""
       }
     },
     "clientPackageManager": {
@@ -273,7 +296,8 @@
         "values": [
           "npm",
           "yarn"
-        ]
+        ],
+        "description": ""
       }
     },
     "databaseType": {
@@ -287,7 +311,8 @@
           "cassandra",
           "couchbase",
           "no"
-        ]
+        ],
+        "description": ""
       }
     },
     "uaaBaseName": {
@@ -297,7 +322,8 @@
         "parseType": "Literal",
         "values": [
           "\"uaa\""
-        ]
+        ],
+        "description": "Mandatory for gateway and microservices if auth type is uaa, must be between double-quotes"
       }
     },
     "reactive": {
@@ -307,7 +333,8 @@
         "parseType": "Boolean",
         "values": [
           "false"
-        ]
+        ],
+        "description": ""
       }
     },
     "enableSwaggerCodegen": {
@@ -317,7 +344,8 @@
         "parseType": "Boolean",
         "values": [
           "false"
-        ]
+        ],
+        "description": ""
       }
     },
     "skipServer": {
@@ -327,7 +355,8 @@
         "parseType": "Boolean",
         "values": [
           "false"
-        ]
+        ],
+        "description": ""
       }
     },
     "clientFramework": {
@@ -338,7 +367,8 @@
         "values": [
           "angularX",
           "react"
-        ]
+        ],
+        "description": ""
       }
     },
     "enableHibernateCache": {
@@ -348,7 +378,8 @@
         "parseType": "Boolean",
         "values": [
           "true"
-        ]
+        ],
+        "description": ""
       }
     },
     "useSass": {
@@ -356,7 +387,8 @@
         "name": "useSass",
         "baseType": "BOOLEAN",
         "parseType": "Boolean",
-        "values": []
+        "values": [],
+        "description": ""
       }
     },
     "authenticationType": {
@@ -369,7 +401,8 @@
           "uaa",
           "session",
           "oauth2"
-        ]
+        ],
+        "description": "uaa for UAA apps, jwt otherwise"
       }
     },
     "clientTheme": {
@@ -379,7 +412,8 @@
         "parseType": "AnyLiteral",
         "values": [
           "none"
-        ]
+        ],
+        "description": "You can put whatever value you want, provided you know it will work (like yeti)"
       }
     }
   }

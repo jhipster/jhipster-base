@@ -7,7 +7,8 @@
         "parseType": "AnyLiteral",
         "values": [
           "\"docker push\""
-        ]
+        ],
+        "description": "The docker push command to use. Must be in double quotes"
       }
     },
     "kubernetesNamespace": {
@@ -17,7 +18,8 @@
         "parseType": "AnyLiteral",
         "values": [
           "default"
-        ]
+        ],
+        "description": "Applicable only when deploymentType is kubernetes"
       }
     },
     "serviceDiscoveryType": {
@@ -29,7 +31,8 @@
           "eureka",
           "consul",
           "no"
-        ]
+        ],
+        "description": ""
       }
     },
     "clusteredDbApps": {
@@ -37,7 +40,8 @@
         "name": "clusteredDbApps",
         "baseType": "LIST",
         "parseType": "ListOfAnyLiterals",
-        "values": []
+        "values": [],
+        "description": "Directory names for the applications with clustered DB separated by comma. Must be a list, example [foo, bar]"
       }
     },
     "appsFolders": {
@@ -45,7 +49,8 @@
         "name": "appsFolders",
         "baseType": "LIST",
         "parseType": "ListOfAnyLiterals",
-        "values": []
+        "values": [],
+        "description": "Directory names for the applications separated by comma. Must be a list, example [foo, bar]"
       }
     },
     "monitoring": {
@@ -57,7 +62,8 @@
           "no",
           "elk",
           "prometheus"
-        ]
+        ],
+        "description": ""
       }
     },
     "istio": {
@@ -68,7 +74,8 @@
         "values": [
           "true",
           "false"
-        ]
+        ],
+        "description": "Applicable only when deploymentType is kubernetes"
       }
     },
     "kubernetesServiceType": {
@@ -80,7 +87,8 @@
           "LoadBalancer",
           "NodePort",
           "Ingress"
-        ]
+        ],
+        "description": "Applicable only when deploymentType is kubernetes"
       }
     },
     "ingressDomain": {
@@ -90,7 +98,8 @@
         "parseType": "AnyLiteral",
         "values": [
           "\"Ingress\""
-        ]
+        ],
+        "description": "The domain for Ingress when kubernetesServiceType is `Ingress`. Must be in double quotes. Applicable only when deploymentType is kubernetes"
       }
     },
     "dockerRepositoryName": {
@@ -98,7 +107,8 @@
         "name": "dockerRepositoryName",
         "baseType": "STRING",
         "parseType": "String",
-        "values": []
+        "values": [],
+        "description": "The name or URL of the docker repository. Must be in double quotes"
       }
     },
     "deploymentType": {
@@ -110,7 +120,8 @@
           "docker-compose",
           "kubernetes",
           "openshift"
-        ]
+        ],
+        "description": ""
       }
     },
     "gatewayType": {
@@ -121,7 +132,8 @@
         "values": [
           "zuul",
           "traefik"
-        ]
+        ],
+        "description": "Value is ignored when serviceDiscoveryType is `no`"
       }
     },
     "directoryPath": {
@@ -131,7 +143,8 @@
         "parseType": "AnyLiteral",
         "values": [
           "\"../\""
-        ]
+        ],
+        "description": "Relative path. Must be in double quotes"
       }
     },
     "consoleOptions": {
@@ -142,7 +155,8 @@
         "values": [
           "curator",
           "zipkin"
-        ]
+        ],
+        "description": "Must be a list"
       }
     },
     "openshiftNamespace": {
@@ -152,7 +166,8 @@
         "parseType": "AnyLiteral",
         "values": [
           "default"
-        ]
+        ],
+        "description": "Applicable only when deploymentType is openshift"
       }
     },
     "storageType": {
@@ -163,7 +178,8 @@
         "values": [
           "ephemeral",
           "persistent"
-        ]
+        ],
+        "description": "Applicable only when deploymentType is openshift"
       }
     }
   }
