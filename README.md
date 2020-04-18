@@ -4,8 +4,8 @@ This project contains JSON definitions and schema for JDL Application and Deploy
 
 ## How to validate
 - go to https://www.jsonschemavalidator.net/
-- choose "Schema Draft v7" for the Json schema
-- copy/paste Json schema and option files of this repo
+- choose "Schema Draft v7" for the JSON schema
+- copy/paste JSON schema and option files of this repo
 
 or just simply
 
