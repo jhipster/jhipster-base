@@ -3,7 +3,7 @@
 This project contains JSON definitions and schema for JDL Application and Deployment options.
 
 ## How to validate
-- https://www.jsonschemavalidator.net/
+- use https://www.jsonschemavalidator.net/
 
 or
 
