@@ -2,7 +2,7 @@
 
 This project contains JSON definitions and schema for JDL Application and Deployment options.
 
-## Validate
+## How to validate
 - https://www.jsonschemavalidator.net/
 - execute script: `sh script/validate.sh`
 
