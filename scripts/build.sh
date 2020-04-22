@@ -9,6 +9,6 @@ do
 	echo "Generting $f.md"
 	option=${f#JDL}
 	title="$(echo $option | sed 's/[A-Z]/ &/g')"
-	echo "# $title" > $f.md
+	echo "## $title" > $f.md
 	cat ./src/$f.json | md-table -c | awk '{print $0}' >> $f.md
 done
