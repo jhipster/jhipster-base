@@ -1,420 +1,350 @@
-{
-  "applicationOptions": {
-    "applicationType": {
-      "option": {
-        "name": "applicationType",
-        "baseType": "STRING",
-        "parseType": "Literal",
-        "values": [
-          "monolith",
-          "microservice",
-          "gateway",
-          "uaa"
-        ],
-        "description": ""
-      }
-    },
-    "entitySuffix": {
-      "option": {
-        "name": "entitySuffix",
-        "baseType": "STRING",
-        "parseType": "JavaIdentifierLiteral",
-        "values": [
-          "Entity"
-        ],
-        "description": "Suffix for entities. false for empty string"
-      }
-    },
-    "serviceDiscoveryType": {
-      "option": {
-        "name": "serviceDiscoveryType",
-        "baseType": "STRING",
-        "parseType": "Literal",
-        "values": [
-          "eureka",
-          "consul",
-          "no",
-          "false"
-        ],
-        "description": ""
-      }
-    },
-    "devDatabaseType": {
-      "option": {
-        "name": "devDatabaseType",
-        "baseType": "STRING",
-        "parseType": "Literal",
-        "values": [
-          "h2Disk",
-          "h2Memory",
-          "mysql",
-          "mariadb",
-          "mssql",
-          "postgresql",
-          "oracle",
-          "no",
-          "mongodb",
-          "cassandra",
-          "couchbase"
-        ],
-        "description": "* + the prod database type"
-      }
-    },
-    "testFrameworks": {
-      "option": {
-        "name": "testFrameworks",
-        "baseType": "LIST",
-        "parseType": "ListOfLiterals",
-        "values": [
-          "protractor",
-          "cucumber",
-          "gatling"
-        ],
-        "description": "Braces mandatory"
-      }
-    },
-    "clientThemeVariant": {
-      "option": {
-        "name": "clientThemeVariant",
-        "baseType": "STRING",
-        "parseType": "AnyLiteral",
-        "values": [
-          "primary"
-        ],
-        "description": "You can put whatever value you want, provided you know it will work (like dark, or light), can also be empty"
-      }
-    },
-    "dtoSuffix": {
-      "option": {
-        "name": "dtoSuffix",
-        "baseType": "STRING",
-        "parseType": "JavaIdentifierLiteral",
-        "values": [
-          "DTO"
-        ],
-        "description": "Suffix for DTOs. false for empty string"
-      }
-    },
-    "nativeLanguage": {
-      "option": {
-        "name": "nativeLanguage",
-        "baseType": "STRING",
-        "parseType": "LangIsoCode",
-        "values": [
-          "en"
-        ],
-        "description": ""
-      }
-    },
-    "jwtSecretKey": {
-      "option": {
-        "name": "jwtSecretKey",
-        "baseType": "STRING",
-        "parseType": "Namespace",
-        "values": [],
-        "description": ""
-      }
-    },
-    "serverPort": {
-      "option": {
-        "name": "serverPort",
-        "baseType": "INTEGER",
-        "parseType": "Number",
-        "values": [
-          "8080",
-          "8081",
-          "9999"
-        ],
-        "description": "Depends on the app type"
-      }
-    },
-    "skipClient": {
-      "option": {
-        "name": "skipClient",
-        "baseType": "BOOLEAN",
-        "parseType": "Boolean",
-        "values": [
-          "false"
-        ],
-        "description": ""
-      }
-    },
-    "messageBroker": {
-      "option": {
-        "name": "messageBroker",
-        "baseType": "STRING",
-        "parseType": "Literal",
-        "values": [
-          "kafka",
-          "false"
-        ],
-        "description": ""
-      }
-    },
-    "cacheProvider": {
-      "option": {
-        "name": "cacheProvider",
-        "baseType": "STRING",
-        "parseType": "Literal",
-        "values": [
-          "ehcache",
-          "hazelcast",
-          "caffeine",
-          "infinispan",
-          "memcached",
-          "redis",
-          "no"
-        ],
-        "description": "ehcache for monoliths and gateways, hazelcast otherwise"
-      }
-    },
-    "websocket": {
-      "option": {
-        "name": "websocket",
-        "baseType": "STRING",
-        "parseType": "Literal",
-        "values": [
-          "spring-websocket",
-          "false"
-        ],
-        "description": ""
-      }
-    },
-    "buildTool": {
-      "option": {
-        "name": "buildTool",
-        "baseType": "STRING",
-        "parseType": "Literal",
-        "values": [
-          "maven",
-          "gradle"
-        ],
-        "description": ""
-      }
-    },
-    "packageName": {
-      "option": {
-        "name": "packageName",
-        "baseType": "STRING",
-        "parseType": "Namespace",
-        "values": [],
-        "description": "Sets the packageFolder option"
-      }
-    },
-    "prodDatabaseType": {
-      "option": {
-        "name": "prodDatabaseType",
-        "baseType": "STRING",
-        "parseType": "Literal",
-        "values": [
-          "mysql",
-          "mariadb",
-          "mssql",
-          "postgresql",
-          "oracle",
-          "no",
-          "mongodb",
-          "cassandra",
-          "couchbase"
-        ],
-        "description": ""
-      }
-    },
-    "baseName": {
-      "option": {
-        "name": "baseName",
-        "baseType": "STRING",
-        "parseType": "AnyLiteral",
-        "values": [
-          "jhipster"
-        ],
-        "description": ""
-      }
-    },
-    "skipUserManagement": {
-      "option": {
-        "name": "skipUserManagement",
-        "baseType": "BOOLEAN",
-        "parseType": "Boolean",
-        "values": [
-          "true"
-        ],
-        "description": ""
-      }
-    },
-    "enableTranslation": {
-      "option": {
-        "name": "enableTranslation",
-        "baseType": "BOOLEAN",
-        "parseType": "Boolean",
-        "values": [
-          "true"
-        ],
-        "description": ""
-      }
-    },
-    "languages": {
-      "option": {
-        "name": "languages",
-        "baseType": "LIST",
-        "parseType": "ListOfLangIsoCodes",
-        "values": [
-          "en",
-          "fr"
-        ],
-        "description": "Braces are mandatory"
-      }
-    },
-    "searchEngine": {
-      "option": {
-        "name": "searchEngine",
-        "baseType": "STRING",
-        "parseType": "Literal",
-        "values": [
-          "elasticsearch",
-          "false"
-        ],
-        "description": ""
-      }
-    },
-    "jhiPrefix": {
-      "option": {
-        "name": "jhiPrefix",
-        "baseType": "STRING",
-        "parseType": "JavaIdentifierLiteral",
-        "values": [
-          "jhi"
-        ],
-        "description": ""
-      }
-    },
-    "clientPackageManager": {
-      "option": {
-        "name": "clientPackageManager",
-        "baseType": "STRING",
-        "parseType": "Literal",
-        "values": [
-          "npm",
-          "yarn"
-        ],
-        "description": ""
-      }
-    },
-    "databaseType": {
-      "option": {
-        "name": "databaseType",
-        "baseType": "STRING",
-        "parseType": "Literal",
-        "values": [
-          "sql",
-          "mongodb",
-          "cassandra",
-          "couchbase",
-          "no"
-        ],
-        "description": ""
-      }
-    },
-    "uaaBaseName": {
-      "option": {
-        "name": "uaaBaseName",
-        "baseType": "STRING",
-        "parseType": "Literal",
-        "values": [
-          "\"uaa\""
-        ],
-        "description": "Mandatory for gateway and microservices if auth type is uaa, must be between double-quotes"
-      }
-    },
-    "reactive": {
-      "option": {
-        "name": "reactive",
-        "baseType": "BOOLEAN",
-        "parseType": "Boolean",
-        "values": [
-          "false"
-        ],
-        "description": ""
-      }
-    },
-    "enableSwaggerCodegen": {
-      "option": {
-        "name": "enableSwaggerCodegen",
-        "baseType": "BOOLEAN",
-        "parseType": "Boolean",
-        "values": [
-          "false"
-        ],
-        "description": ""
-      }
-    },
-    "skipServer": {
-      "option": {
-        "name": "skipServer",
-        "baseType": "BOOLEAN",
-        "parseType": "Boolean",
-        "values": [
-          "false"
-        ],
-        "description": ""
-      }
-    },
-    "clientFramework": {
-      "option": {
-        "name": "clientFramework",
-        "baseType": "STRING",
-        "parseType": "Literal",
-        "values": [
-          "angularX",
-          "react"
-        ],
-        "description": ""
-      }
-    },
-    "enableHibernateCache": {
-      "option": {
-        "name": "enableHibernateCache",
-        "baseType": "BOOLEAN",
-        "parseType": "Boolean",
-        "values": [
-          "true"
-        ],
-        "description": ""
-      }
-    },
-    "useSass": {
-      "option": {
-        "name": "useSass",
-        "baseType": "BOOLEAN",
-        "parseType": "Boolean",
-        "values": [],
-        "description": ""
-      }
-    },
-    "authenticationType": {
-      "option": {
-        "name": "authenticationType",
-        "baseType": "STRING",
-        "parseType": "Literal",
-        "values": [
-          "jwt",
-          "uaa",
-          "session",
-          "oauth2"
-        ],
-        "description": "uaa for UAA apps, jwt otherwise"
-      }
-    },
-    "clientTheme": {
-      "option": {
-        "name": "clientTheme",
-        "baseType": "STRING",
-        "parseType": "AnyLiteral",
-        "values": [
-          "none"
-        ],
-        "description": "You can put whatever value you want, provided you know it will work (like yeti)"
-      }
-    }
+[
+  {
+    "option": "applicationType",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [
+      "monolith",
+      "microservice",
+      "gateway",
+      "uaa"
+    ],
+    "description": ""
+  },
+  {
+    "option": "entitySuffix",
+    "baseType": "STRING",
+    "parseType": "JavaIdentifierLiteral",
+    "values": [
+      "Entity"
+    ],
+    "description": "Suffix for entities. false for empty string"
+  },
+  {
+    "option": "serviceDiscoveryType",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [
+      "eureka",
+      "consul",
+      "no",
+      "false"
+    ],
+    "description": ""
+  },
+  {
+    "option": "devDatabaseType",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [
+      "h2Disk",
+      "h2Memory",
+      "mysql",
+      "mariadb",
+      "mssql",
+      "postgresql",
+      "oracle",
+      "no",
+      "mongodb",
+      "cassandra",
+      "couchbase"
+    ],
+    "description": "* + the prod database type"
+  },
+  {
+    "option": "testFrameworks",
+    "baseType": "LIST",
+    "parseType": "ListOfLiterals",
+    "values": [
+      "protractor",
+      "cucumber",
+      "gatling"
+    ],
+    "description": "Braces mandatory"
+  },
+  {
+    "option": "clientThemeVariant",
+    "baseType": "STRING",
+    "parseType": "AnyLiteral",
+    "values": [
+      "primary"
+    ],
+    "description": "You can put whatever value you want, provided you know it will work (like dark, or light), can also be empty"
+  },
+  {
+    "option": "dtoSuffix",
+    "baseType": "STRING",
+    "parseType": "JavaIdentifierLiteral",
+    "values": [
+      "DTO"
+    ],
+    "description": "Suffix for DTOs. false for empty string"
+  },
+  {
+    "option": "nativeLanguage",
+    "baseType": "STRING",
+    "parseType": "LangIsoCode",
+    "values": [
+      "en"
+    ],
+    "description": ""
+  },
+  {
+    "option": "jwtSecretKey",
+    "baseType": "STRING",
+    "parseType": "Namespace",
+    "values": [],
+    "description": ""
+  },
+  {
+    "option": "serverPort",
+    "baseType": "INTEGER",
+    "parseType": "Number",
+    "values": [
+      "8080",
+      "8081",
+      "9999"
+    ],
+    "description": "Depends on the app type"
+  },
+  {
+    "option": "skipClient",
+    "baseType": "BOOLEAN",
+    "parseType": "Boolean",
+    "values": [
+      "false"
+    ],
+    "description": ""
+  },
+  {
+    "option": "messageBroker",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [
+      "kafka",
+      "false"
+    ],
+    "description": ""
+  },
+  {
+    "option": "cacheProvider",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [
+      "ehcache",
+      "hazelcast",
+      "caffeine",
+      "infinispan",
+      "memcached",
+      "redis",
+      "no"
+    ],
+    "description": "ehcache for monoliths and gateways, hazelcast otherwise"
+  },
+  {
+    "option": "websocket",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [
+      "spring-websocket",
+      "false"
+    ],
+    "description": ""
+  },
+  {
+    "option": "buildTool",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [
+      "maven",
+      "gradle"
+    ],
+    "description": ""
+  },
+  {
+    "option": "packageName",
+    "baseType": "STRING",
+    "parseType": "Namespace",
+    "values": [],
+    "description": "Sets the packageFolder option"
+  },
+  {
+    "option": "prodDatabaseType",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [
+      "mysql",
+      "mariadb",
+      "mssql",
+      "postgresql",
+      "oracle",
+      "no",
+      "mongodb",
+      "cassandra",
+      "couchbase"
+    ],
+    "description": ""
+  },
+  {
+    "option": "baseName",
+    "baseType": "STRING",
+    "parseType": "AnyLiteral",
+    "values": [
+      "jhipster"
+    ],
+    "description": ""
+  },
+  {
+    "option": "skipUserManagement",
+    "baseType": "BOOLEAN",
+    "parseType": "Boolean",
+    "values": [
+      "true"
+    ],
+    "description": ""
+  },
+  {
+    "option": "enableTranslation",
+    "baseType": "BOOLEAN",
+    "parseType": "Boolean",
+    "values": [
+      "true"
+    ],
+    "description": ""
+  },
+  {
+    "option": "languages",
+    "baseType": "LIST",
+    "parseType": "ListOfLangIsoCodes",
+    "values": [
+      "en",
+      "fr"
+    ],
+    "description": "Braces are mandatory"
+  },
+  {
+    "option": "searchEngine",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [
+      "elasticsearch",
+      "false"
+    ],
+    "description": ""
+  },
+  {
+    "option": "jhiPrefix",
+    "baseType": "STRING",
+    "parseType": "JavaIdentifierLiteral",
+    "values": [
+      "jhi"
+    ],
+    "description": ""
+  },
+  {
+    "option": "clientPackageManager",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [
+      "npm",
+      "yarn"
+    ],
+    "description": ""
+  },
+  {
+    "option": "databaseType",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [
+      "sql",
+      "mongodb",
+      "cassandra",
+      "couchbase",
+      "no"
+    ],
+    "description": ""
+  },
+  {
+    "option": "uaaBaseName",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [
+      "\"uaa\""
+    ],
+    "description": "Mandatory for gateway and microservices if auth type is uaa, must be between double-quotes"
+  },
+  {
+    "option": "reactive",
+    "baseType": "BOOLEAN",
+    "parseType": "Boolean",
+    "values": [
+      "false"
+    ],
+    "description": ""
+  },
+  {
+    "option": "enableSwaggerCodegen",
+    "baseType": "BOOLEAN",
+    "parseType": "Boolean",
+    "values": [
+      "false"
+    ],
+    "description": ""
+  },
+  {
+    "option": "skipServer",
+    "baseType": "BOOLEAN",
+    "parseType": "Boolean",
+    "values": [
+      "false"
+    ],
+    "description": ""
+  },
+  {
+    "option": "clientFramework",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [
+      "angularX",
+      "react"
+    ],
+    "description": ""
+  },
+  {
+    "option": "enableHibernateCache",
+    "baseType": "BOOLEAN",
+    "parseType": "Boolean",
+    "values": [
+      "true"
+    ],
+    "description": ""
+  },
+  {
+    "option": "useSass",
+    "baseType": "BOOLEAN",
+    "parseType": "Boolean",
+    "values": [],
+    "description": ""
+  },
+  {
+    "option": "authenticationType",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [
+      "jwt",
+      "uaa",
+      "session",
+      "oauth2"
+    ],
+    "description": "uaa for UAA apps, jwt otherwise"
+  },
+  {
+    "option": "clientTheme",
+    "baseType": "STRING",
+    "parseType": "AnyLiteral",
+    "values": [
+      "none"
+    ],
+    "description": "You can put whatever value you want, provided you know it will work (like yeti)"
   }
-}
+]

@@ -1,186 +1,152 @@
-{
-  "deploymentOptions": {
-    "dockerPushCommand": {
-      "option": {
-        "name": "dockerPushCommand",
-        "baseType": "STRING",
-        "parseType": "AnyLiteral",
-        "values": [
-          "\"docker push\""
-        ],
-        "description": "The docker push command to use. Must be in double quotes"
-      }
-    },
-    "kubernetesNamespace": {
-      "option": {
-        "name": "kubernetesNamespace",
-        "baseType": "STRING",
-        "parseType": "AnyLiteral",
-        "values": [
-          "default"
-        ],
-        "description": "Applicable only when deploymentType is kubernetes"
-      }
-    },
-    "serviceDiscoveryType": {
-      "option": {
-        "name": "serviceDiscoveryType",
-        "baseType": "STRING",
-        "parseType": "Literal",
-        "values": [
-          "eureka",
-          "consul",
-          "no"
-        ],
-        "description": ""
-      }
-    },
-    "clusteredDbApps": {
-      "option": {
-        "name": "clusteredDbApps",
-        "baseType": "LIST",
-        "parseType": "ListOfAnyLiterals",
-        "values": [],
-        "description": "Directory names for the applications with clustered DB separated by comma. Must be a list, example [foo, bar]"
-      }
-    },
-    "appsFolders": {
-      "option": {
-        "name": "appsFolders",
-        "baseType": "LIST",
-        "parseType": "ListOfAnyLiterals",
-        "values": [],
-        "description": "Directory names for the applications separated by comma. Must be a list, example [foo, bar]"
-      }
-    },
-    "monitoring": {
-      "option": {
-        "name": "monitoring",
-        "baseType": "STRING",
-        "parseType": "Literal",
-        "values": [
-          "no",
-          "elk",
-          "prometheus"
-        ],
-        "description": ""
-      }
-    },
-    "istio": {
-      "option": {
-        "name": "istio",
-        "baseType": "BOOLEAN",
-        "parseType": "Boolean",
-        "values": [
-          "true",
-          "false"
-        ],
-        "description": "Applicable only when deploymentType is kubernetes"
-      }
-    },
-    "kubernetesServiceType": {
-      "option": {
-        "name": "kubernetesServiceType",
-        "baseType": "STRING",
-        "parseType": "Literal",
-        "values": [
-          "LoadBalancer",
-          "NodePort",
-          "Ingress"
-        ],
-        "description": "Applicable only when deploymentType is kubernetes"
-      }
-    },
-    "ingressDomain": {
-      "option": {
-        "name": "ingressDomain",
-        "baseType": "STRING",
-        "parseType": "AnyLiteral",
-        "values": [
-          "\"Ingress\""
-        ],
-        "description": "The domain for Ingress when kubernetesServiceType is `Ingress`. Must be in double quotes. Applicable only when deploymentType is kubernetes"
-      }
-    },
-    "dockerRepositoryName": {
-      "option": {
-        "name": "dockerRepositoryName",
-        "baseType": "STRING",
-        "parseType": "String",
-        "values": [],
-        "description": "The name or URL of the docker repository. Must be in double quotes"
-      }
-    },
-    "deploymentType": {
-      "option": {
-        "name": "deploymentType",
-        "baseType": "STRING",
-        "parseType": "Literal",
-        "values": [
-          "docker-compose",
-          "kubernetes",
-          "openshift"
-        ],
-        "description": ""
-      }
-    },
-    "gatewayType": {
-      "option": {
-        "name": "gatewayType",
-        "baseType": "STRING",
-        "parseType": "Literal",
-        "values": [
-          "zuul",
-          "traefik"
-        ],
-        "description": "Value is ignored when serviceDiscoveryType is `no`"
-      }
-    },
-    "directoryPath": {
-      "option": {
-        "name": "directoryPath",
-        "baseType": "STRING",
-        "parseType": "AnyLiteral",
-        "values": [
-          "\"../\""
-        ],
-        "description": "Relative path. Must be in double quotes"
-      }
-    },
-    "consoleOptions": {
-      "option": {
-        "name": "consoleOptions",
-        "baseType": "LIST",
-        "parseType": "ListOfLiterals",
-        "values": [
-          "curator",
-          "zipkin"
-        ],
-        "description": "Must be a list"
-      }
-    },
-    "openshiftNamespace": {
-      "option": {
-        "name": "openshiftNamespace",
-        "baseType": "STRING",
-        "parseType": "AnyLiteral",
-        "values": [
-          "default"
-        ],
-        "description": "Applicable only when deploymentType is openshift"
-      }
-    },
-    "storageType": {
-      "option": {
-        "name": "storageType",
-        "baseType": "STRING",
-        "parseType": "Literal",
-        "values": [
-          "ephemeral",
-          "persistent"
-        ],
-        "description": "Applicable only when deploymentType is openshift"
-      }
-    }
+[
+  {
+    "option": "dockerPushCommand",
+    "baseType": "STRING",
+    "parseType": "AnyLiteral",
+    "values": [
+      "\"docker push\""
+    ],
+    "description": "The docker push command to use. Must be in double quotes"
+  },
+  {
+    "option": "kubernetesNamespace",
+    "baseType": "STRING",
+    "parseType": "AnyLiteral",
+    "values": [
+      "default"
+    ],
+    "description": "Applicable only when deploymentType is kubernetes"
+  },
+  {
+    "option": "serviceDiscoveryType",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [
+      "eureka",
+      "consul",
+      "no"
+    ],
+    "description": ""
+  },
+  {
+    "option": "clusteredDbApps",
+    "baseType": "LIST",
+    "parseType": "ListOfAnyLiterals",
+    "values": [],
+    "description": "Directory names for the applications with clustered DB separated by comma. Must be a list, example [foo, bar]"
+  },
+  {
+    "option": "appsFolders",
+    "baseType": "LIST",
+    "parseType": "ListOfAnyLiterals",
+    "values": [],
+    "description": "Directory names for the applications separated by comma. Must be a list, example [foo, bar]"
+  },
+  {
+    "option": "monitoring",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [
+      "no",
+      "elk",
+      "prometheus"
+    ],
+    "description": ""
+  },
+  {
+    "option": "istio",
+    "baseType": "BOOLEAN",
+    "parseType": "Boolean",
+    "values": [
+      "true",
+      "false"
+    ],
+    "description": "Applicable only when deploymentType is kubernetes"
+  },
+  {
+    "option": "kubernetesServiceType",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [
+      "LoadBalancer",
+      "NodePort",
+      "Ingress"
+    ],
+    "description": "Applicable only when deploymentType is kubernetes"
+  },
+  {
+    "option": "ingressDomain",
+    "baseType": "STRING",
+    "parseType": "AnyLiteral",
+    "values": [
+      "\"Ingress\""
+    ],
+    "description": "The domain for Ingress when kubernetesServiceType is `Ingress`. Must be in double quotes. Applicable only when deploymentType is kubernetes"
+  },
+  {
+    "option": "dockerRepositoryName",
+    "baseType": "STRING",
+    "parseType": "String",
+    "values": [],
+    "description": "The name or URL of the docker repository. Must be in double quotes"
+  },
+  {
+    "option": "deploymentType",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [
+      "docker-compose",
+      "kubernetes",
+      "openshift"
+    ],
+    "description": ""
+  },
+  {
+    "option": "gatewayType",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [
+      "zuul",
+      "traefik"
+    ],
+    "description": "Value is ignored when serviceDiscoveryType is `no`"
+  },
+  {
+    "option": "directoryPath",
+    "baseType": "STRING",
+    "parseType": "AnyLiteral",
+    "values": [
+      "\"../\""
+    ],
+    "description": "Relative path. Must be in double quotes"
+  },
+  {
+    "option": "consoleOptions",
+    "baseType": "LIST",
+    "parseType": "ListOfLiterals",
+    "values": [
+      "curator",
+      "zipkin"
+    ],
+    "description": "Must be a list"
+  },
+  {
+    "option": "openshiftNamespace",
+    "baseType": "STRING",
+    "parseType": "AnyLiteral",
+    "values": [
+      "default"
+    ],
+    "description": "Applicable only when deploymentType is openshift"
+  },
+  {
+    "option": "storageType",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [
+      "ephemeral",
+      "persistent"
+    ],
+    "description": "Applicable only when deploymentType is openshift"
   }
-}
+]

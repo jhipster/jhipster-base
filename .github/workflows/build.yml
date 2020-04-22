@@ -15,6 +15,6 @@ jobs:
       -  name: Setup Node.js environment
          uses: actions/setup-node@v1.4.1
       -  name: Install ajv-cli first
-         run: npm install -g ajv-cli
+         run: npm install -g ajv-cli markdown-table-cli
       -  name: Execute script
-         run: sh ./scripts/validate.sh
+         run: sh ./scripts/build.sh
