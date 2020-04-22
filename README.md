@@ -12,9 +12,6 @@ or just simply
 - `npm install -g ajv-cli`
 - `sh script/validate.sh`
 
-## TODO
-- Explain more and document
-
 ## Options
 - [Application Options](JDLApplicationOptions.md)
 - [Deployment Options](JDLDeploymentOptions.md)
