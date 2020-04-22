@@ -6,6 +6,7 @@ for f in $files
 do
 	echo "Validating $f.json"
 	ajv validate -s ./src/$f.schema.json -d ./src/$f.json
+	echo "Generting $f.md"
 	option=${f#JDL}
 	title="$(echo $option | sed 's/[A-Z]/ &/g')"
 	echo "# $title" > $f.md
