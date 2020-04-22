@@ -1,4 +1,4 @@
-#  Application Options
+##  Application Options
 | Option               | BaseType | ParseType             | Values                                                                               | Description                                                                                                  |
 | -------------------- | -------- | --------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
 | applicationType      | STRING   | Literal               | monolith,microservice,gateway,uaa                                                    |                                                                                                              |
