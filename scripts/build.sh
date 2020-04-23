@@ -10,5 +10,5 @@ do
 	option=${f#JDL}
 	title="$(echo $option | sed 's/[A-Z]/ &/g')"
 	echo "## $title" > $f.md
-	cat ./src/$f.json | md-table -c | awk '{print $0}' >> $f.md
+	cat ./src/$f.json | md-table -c -al | awk '{print $0}' | sed 's/,/, /g' >> $f.md
 done
