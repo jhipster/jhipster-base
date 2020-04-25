@@ -1,0 +1,123 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "array",
+    "title": "The Root Schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": [],
+    "additionalItems": true,
+    "items": {
+        "$id": "#/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "description": "An explanation about the purpose of this instance.",
+        "default": {},
+        "examples": [
+            {
+                "option": "dto",
+                "baseType": "STRING",
+                "values": [
+                    "mapstruct",
+                    "no"
+                ],
+                "description": "",
+                "parseType": "Literal"
+            },
+            {
+                "option": "pagination",
+                "baseType": "STRING",
+                "parseType": "Literal",
+                "values": [
+                    "infinite-scroll",
+                    "pagination",
+                    "no"
+                ],
+                "description": ""
+            },
+            {
+                "option": "readOnly",
+                "baseType": "BOOLEAN",
+                "parseType": "Boolean",
+                "values": [
+                    "false"
+                ],
+                "description": ""
+            }
+        ],
+        "additionalProperties": true,
+        "required": [
+            "option",
+            "baseType",
+            "parseType",
+            "values",
+            "description"
+        ],
+        "properties": {
+            "option": {
+                "$id": "#/items/properties/option",
+                "type": "string",
+                "title": "The Option Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                    "dto"
+                ]
+            },
+            "baseType": {
+                "$id": "#/items/properties/baseType",
+                "type": "string",
+                "title": "The Basetype Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                    "STRING"
+                ]
+            },
+            "parseType": {
+                "$id": "#/items/properties/parseType",
+                "type": "string",
+                "title": "The Parsetype Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                    "Literal"
+                ]
+            },
+            "values": {
+                "$id": "#/items/properties/values",
+                "type": "array",
+                "title": "The Values Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": [],
+                "examples": [
+                    [
+                        "mapstruct",
+                        "no"
+                    ]
+                ],
+                "additionalItems": true,
+                "items": {
+                    "$id": "#/items/properties/values/items",
+                    "type": "string",
+                    "title": "The Items Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "mapstruct",
+                        "no"
+                    ]
+                }
+            },
+            "description": {
+                "$id": "#/items/properties/description",
+                "type": "string",
+                "title": "The Description Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                    ""
+                ]
+            }
+        }
+    }
+}
