@@ -30,7 +30,9 @@ $ sh scripts/build.sh
   ajv validate -s ./src/JDLDeploymentOptions.json.schema.json -d ./src/JDLDeploymentOptions.json
   ```
 
-## Options
+## Description
+The following user documentation of options are generated from the JSON sources: 
+
 - [Options](JDLOptions.md)
 - [Application Options](JDLApplicationOptions.md)
 - [Deployment Options](JDLDeploymentOptions.md)
