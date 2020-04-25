@@ -31,6 +31,7 @@ $ sh scripts/build.sh
   ```
 
 ## Options
+- [Options](JDLOptions.md)
 - [Application Options](JDLApplicationOptions.md)
 - [Deployment Options](JDLDeploymentOptions.md)
 
