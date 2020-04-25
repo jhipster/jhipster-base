@@ -21,6 +21,14 @@ $ sh scripts/build.sh
 - go to https://www.jsonschemavalidator.net/
 - choose "Schema Draft v7" for the JSON schema
 - copy/paste JSON schema and option files of this repo
+- or use the above installed cli tool 'ajv-cli':
+  ```
+  ajv validate -s ./src/JDLApplicationOptions.schema.json -d ./src/JDLApplicationOptions.json
+  ```
+  or
+  ```
+  ajv validate -s ./src/JDLDeploymentOptions.json.schema.json -d ./src/JDLDeploymentOptions.json
+  ```
 
 ## Options
 - [Application Options](JDLApplicationOptions.md)
