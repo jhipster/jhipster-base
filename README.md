@@ -1,6 +1,6 @@
 # JHipster Base
 
-This project contains JSON definitions and schema file for JDL Application and Deployment options shared between JHipster Core and JHipster IDE products.
+This project contains JSON definitions and schema files for JDL Application and Deployment options shared between JHipster Core and JHipster IDE products.
 
 ## Installation
 
