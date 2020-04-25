@@ -4,10 +4,10 @@ This project contains JSON definitions and schema for JDL Application and Deploy
 
 ## Installation
 
-`
+```
 $ npm install -g ajv
 $ npm install -g md-table
-`
+```
 
 ## Build
 
