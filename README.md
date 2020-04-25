@@ -2,8 +2,17 @@
 
 This project contains JSON definitions and schema for JDL Application and Deployment options.
 
+## Installation
+
+'
+$ npm install -g ajv
+$ npm install -g md-table
+'
+
 ## Build
 `
+$ git clone https://github.com/colameo/jhipster-base.git
+$ cd jhipster-base
 $ sh scripts/build.sh
 `
 
