@@ -10,11 +10,12 @@ $ npm install -g md-table
 `
 
 ## Build
-`
+
+```
 $ git clone https://github.com/colameo/jhipster-base.git
 $ cd jhipster-base
 $ sh scripts/build.sh
-`
+```
 
 ## How to validate
 - go to https://www.jsonschemavalidator.net/
