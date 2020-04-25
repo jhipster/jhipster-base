@@ -1,0 +1,16 @@
+##  Options
+| Option           | BaseType | ParseType | Values                        | Description                                                                                                                               |
+| ---------------- | -------- | --------- | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| angularSuffix    | STRING   | Literal   |                               | The suffix angular files should have,  the dash prefix is optional for this option.                                                        |
+| clientRootFolder | STRING   | Literal   |                               | The base folder where client files are set up.                                                                                            |
+| dto              | STRING   | Literal   | mapstruct, no                  | Whether to create DTOs for your entities,  if an entity has a DTO but no service,  then 'serviceClass' will be used for the service option. |
+| embedded         | BOOLEAN  | Boolean   | true                          | Whether an entity is embedded inside others.                                                                                              |
+| filter           | BOOLEAN  | Boolean   | true                          | Whether to enable JPA metamodel filtering on an entity.                                                                                   |
+| microservice     | STRING   | Literal   |                               | The value is set to be the application's name for each entity in an application,  and isn't set when application isn't a microservice.     |
+| noFluentMethod   | BOOLEAN  | Boolean   | false                         | Whether to turn off the generation of fluent methods.                                                                                     |
+| pagination       | STRING   | Literal   | infinite-scroll, pagination, no |                                                                                                                                           |
+| readOnly         | BOOLEAN  | Boolean   | false                         | Whether to turn off front-end and back-end code generation to create,  update or delete entities.                                          |
+| search           | STRING   | Literal   | couchbase, elasticsearch, no    |                                                                                                                                           |
+| service          | STRING   | Literal   | serviceClass, serviceImpl, no   |                                                                                                                                           |
+| skipClient       | Boolean  | boolean   | false                         | Whether to skip front-end code generation.                                                                                                |
+| skipServer       | Boolean  | boolean   | false                         | Whether to skip back-end code generation.                                                                                                 |

@@ -1,0 +1,120 @@
+[
+  {
+    "option": "angularSuffix",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [],
+    "description": "The suffix angular files should have, the dash prefix is optional for this option."
+  },
+  {
+    "option": "clientRootFolder",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [],
+    "description": "The base folder where client files are set up."
+  },
+  {
+    "option": "dto",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [
+      "mapstruct",
+      "no"
+    ],
+    "description": "Whether to create DTOs for your entities, if an entity has a DTO but no service, then 'serviceClass' will be used for the service option."
+  },
+  {
+    "option": "embedded",
+    "baseType": "BOOLEAN",
+    "parseType": "Boolean",
+    "values": [
+      "true"
+    ],
+    "description": "Whether an entity is embedded inside others."
+  },
+  {
+    "option": "filter",
+    "baseType": "BOOLEAN",
+    "parseType": "Boolean",
+    "values": [
+      "true"
+    ],
+    "description": "Whether to enable JPA metamodel filtering on an entity."
+  },
+  {
+    "option": "microservice",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [],
+    "description": "The value is set to be the application's name for each entity in an application, and isn't set when application isn't a microservice."
+  },
+  {
+    "option": "noFluentMethod",
+    "baseType": "BOOLEAN",
+    "parseType": "Boolean",
+    "values": [
+      "false"
+    ],
+    "description": "Whether to turn off the generation of fluent methods."
+  },
+  {
+    "option": "pagination",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [
+      "infinite-scroll",
+      "pagination",
+      "no"
+    ],
+    "description": ""
+  },
+  {
+    "option": "readOnly",
+    "baseType": "BOOLEAN",
+    "parseType": "Boolean",
+    "values": [
+      "false"
+    ],
+    "description": "Whether to turn off front-end and back-end code generation to create, update or delete entities."
+  },
+  {
+    "option": "search",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [
+      "couchbase",
+      "elasticsearch",
+      "no"
+    ],
+    "description": ""
+  },
+  {
+    "option": "service",
+    "baseType": "STRING",
+    "parseType": "Literal",
+    "values": [
+      "serviceClass",
+      "serviceImpl",
+      "no"
+    ],
+    "description": ""
+  },
+  {
+    "option": "skipClient",
+    "baseType": "Boolean",
+    "parseType": "boolean",
+    "values": [
+      "false"
+    ],
+    "description": "Whether to skip front-end code generation."
+  },
+  {
+    "option": "skipServer",
+    "baseType": "Boolean",
+    "parseType": "boolean",
+    "values": [
+      "false"
+    ],
+    "description": "Whether to skip back-end code generation."
+  }
+]
