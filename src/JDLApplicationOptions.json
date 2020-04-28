@@ -12,6 +12,16 @@
     "description": ""
   },
   {
+    "option": "blueprints",
+    "baseType": "STRING",
+    "parseType": "ListOfLiterals",
+    "values": [
+      "generator-jhipster-vuejs",
+      "generator-jhipster-dotnetcore"
+    ],
+    "description": ""
+  },
+  {
     "option": "entitySuffix",
     "baseType": "STRING",
     "parseType": "JavaIdentifierLiteral",
