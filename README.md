@@ -31,7 +31,7 @@ $ sh scripts/build.sh
   ```
 
 ## Description
-The following tables are generated from the JSON sources: 
+The following tables are generated from JSON sources: 
 
 - [Options](JDLOptions.md)
 - [Application Options](JDLApplicationOptions.md)
