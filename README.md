@@ -31,9 +31,10 @@ $ sh scripts/build.sh
   ```
 
 ## Description
-The following user documentation of options are generated from the JSON sources: 
+The following tables are generated from the JSON sources: 
 
 - [Options](JDLOptions.md)
 - [Application Options](JDLApplicationOptions.md)
 - [Deployment Options](JDLDeploymentOptions.md)
+- [Languages](JDLLanguages.md)
 
