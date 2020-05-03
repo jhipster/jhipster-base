@@ -22,8 +22,18 @@
                     "gateway",
                     "uaa"
                 ],
-                "description": "",
-                "parseType": "Literal"
+                "description": "One of the listed values",
+                "parseType": "EnumLiteral"
+            },
+            {
+                "values": [
+                    "generator-jhipster-vuejs",
+                    "generator-jhipster-dotnetcore"
+                ],
+                "description": "[generator-jhipster-vuejs] or [generator-jhipster-vuejs, generator-jhipster-dotnetcore]",
+                "parseType": "ListOfLiterals",
+                "option": "blueprints",
+                "baseType": "STRING"
             },
             {
                 "values": [
@@ -33,18 +43,6 @@
                 "parseType": "JavaIdentifierLiteral",
                 "option": "entitySuffix",
                 "baseType": "STRING"
-            },
-            {
-                "parseType": "Literal",
-                "option": "serviceDiscoveryType",
-                "baseType": "STRING",
-                "values": [
-                    "eureka",
-                    "consul",
-                    "no",
-                    "false"
-                ],
-                "description": ""
             }
         ],
         "additionalProperties": true,
@@ -83,7 +81,7 @@
                 "description": "An explanation about the purpose of this instance.",
                 "default": "",
                 "examples": [
-                    "Literal"
+                    "EnumLiteral"
                 ]
             },
             "values": {
@@ -120,7 +118,7 @@
                 "description": "An explanation about the purpose of this instance.",
                 "default": "",
                 "examples": [
-                    ""
+                    "One of the listed values"
                 ]
             }
         }
