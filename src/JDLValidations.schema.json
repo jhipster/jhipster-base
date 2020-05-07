@@ -1,0 +1,107 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "array",
+    "title": "The Root Schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": [],
+    "additionalItems": true,
+    "items": {
+        "$id": "#/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "description": "An explanation about the purpose of this instance.",
+        "default": {},
+        "examples": [
+            {
+                "code": "UNIQUE",
+                "name": "unique",
+                "baseType": "BOOLEAN",
+                "parseType": "Boolean",
+                "valueIsRequired": false
+            },
+            {
+                "code": "MIN",
+                "name": "min",
+                "baseType": "INTEGER",
+                "parseType": "Number",
+                "valueIsRequired": true
+            },
+            {
+                "code": "PATTERN",
+                "name": "pattern",
+                "baseType": "STRING",
+                "parseType": "RegExp",
+                "valueIsRequired": true
+            }
+        ],
+        "additionalProperties": true,
+        "required": [
+            "code",
+            "name",
+            "baseType",
+            "parseType"
+        ],
+        "properties": {
+            "code": {
+                "$id": "#/items/properties/code",
+                "type": "string",
+                "title": "The Code Schema",
+                "description": "The code is the internal ID for the validation object.",
+                "default": "",
+                "examples": [
+                    "REQUIRED",
+                    "MIN",
+                    "PATTERN"
+                ]
+            },
+            "name": {
+                "$id": "#/items/properties/name",
+                "type": "string",
+                "title": "The Name Schema",
+                "description": "The name is the validation's visible name.",
+                "default": "",
+                "examples": [
+                    "required",
+                    "min",
+                    "pattern"
+                ]
+            },
+            "baseType": {
+                "$id": "#/items/properties/baseType",
+                "type": "string",
+                "title": "The baseType Schema",
+                "description": "The validation's baseType refers to the value type, either STRING, INTEGER or BOOLEAN.",
+                "default": "",
+                "examples": [
+                    "STRING",
+                    "INTEGER",
+                    "BOOLEAN"
+                ]
+            },
+            "parseType": {
+                "$id": "#/items/properties/parseType",
+                "type": "string",
+                "title": "The parseType Schema",
+                "description": "The validation's parseType refers to what the value can be parsed to.",
+                "default": "",
+                "examples": [
+                    "RegExp",
+                    "Number",
+                    "String"
+                ]
+            },
+            "valueIsRequired": {
+                "$id": "#/items/properties/valueIsRequired",
+                "type": "boolean",
+                "title": "The valueIsRequired Schema",
+                "description": "Whether the validation requires a value.",
+                "default": "",
+                "examples": [
+                    true,
+                    false
+                ]
+            }
+        }
+    }
+}

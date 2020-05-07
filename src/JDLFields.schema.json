@@ -1,0 +1,93 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "array",
+    "title": "The Root Schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": [],
+    "additionalItems": true,
+    "items": {
+        "$id": "#/items",
+        "type": "object",
+        "title": "The Fields Schema",
+        "description": "An explanation about the purpose of this instance.",
+        "default": {},
+        "examples": [
+            {
+                "code": "STRING",
+                "name": "String",
+                "validations": [
+                    "REQUIRED",
+                    "UNIQUE",
+                    "MINLENGTH",
+                    "MAXLENGTH",
+                    "PATTERN"
+                ]
+            },
+            {
+                "code": "INTEGER",
+                "name": "Integer",
+                "validations": [
+                    "REQUIRED",
+                    "UNIQUE",
+                    "MIN",
+                    "MAX"
+                ]
+            },
+            {
+                "code": "LONG",
+                "name": "Long",
+                "validations": [
+                    "REQUIRED",
+                    "UNIQUE",
+                    "MIN",
+                    "MAX"
+                ]
+            }
+        ],
+        "additionalProperties": true,
+        "required": [
+            "code",
+            "name",
+            "validations"
+        ],
+        "properties": {
+            "code": {
+                "$id": "#/items/properties/code",
+                "type": "string",
+                "title": "The Code Schema",
+                "description": "The code is the internal ID for the field object.",
+                "default": "",
+                "examples": [
+                    "STRING",
+                    "BYTE_BUFFER",
+                    "INSTANT"
+                ]
+            },
+            "name": {
+                "$id": "#/items/properties/name",
+                "type": "string",
+                "title": "The Name Schema",
+                "description": "The name is the validation's visible name.",
+                "default": "",
+                "examples": [
+                    "String",
+                    "ByteBuffer",
+                    "Instant"
+                ]
+            },
+            "validations": {
+                "$id": "#/items/properties/validations",
+                "type": "array",
+                "title": "The validations Schema",
+                "description": "Contains the fields' possible validations, either none or more than one as long as they are specified once.",
+                "default": "",
+                "examples": [
+                    "required",
+                    "maxbytes",
+                    "pattern"
+                ]
+            }
+        }
+    }
+}
