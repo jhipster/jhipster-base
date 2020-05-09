@@ -1,0 +1,65 @@
+[
+  {
+    "code": "REQUIRED",
+    "name": "required",
+    "baseType": "BOOLEAN",
+    "parseType": "Boolean",
+    "valueIsRequired": false
+  },
+  {
+    "code": "UNIQUE",
+    "name": "unique",
+    "baseType": "BOOLEAN",
+    "parseType": "Boolean",
+    "valueIsRequired": false
+  },
+  {
+    "code": "MIN",
+    "name": "min",
+    "baseType": "INTEGER",
+    "parseType": "Number",
+    "valueIsRequired": true
+  },
+  {
+    "code": "MAX",
+    "name": "max",
+    "baseType": "INTEGER",
+    "parseType": "Number",
+    "valueIsRequired": true
+  },
+  {
+    "code": "MINLENGTH",
+    "name": "minlength",
+    "baseType": "INTEGER",
+    "parseType": "Number",
+    "valueIsRequired": true
+  },
+  {
+    "code": "MAXLENGTH",
+    "name": "maxlength",
+    "baseType": "INTEGER",
+    "parseType": "Number",
+    "valueIsRequired": true
+  },
+  {
+    "code": "MINBYTES",
+    "name": "minbytes",
+    "baseType": "INTEGER",
+    "parseType": "Number",
+    "valueIsRequired": true
+  },
+  {
+    "code": "MAXBYTES",
+    "name": "maxbytes",
+    "baseType": "INTEGER",
+    "parseType": "Number",
+    "valueIsRequired": true
+  },
+  {
+    "code": "PATTERN",
+    "name": "pattern",
+    "baseType": "STRING",
+    "parseType": "RegExp",
+    "valueIsRequired": true
+  }
+]

@@ -1,0 +1,177 @@
+[
+  {
+    "code": "STRING",
+    "name": "String",
+    "validations": [
+      "REQUIRED",
+      "UNIQUE",
+      "MINLENGTH",
+      "MAXLENGTH",
+      "PATTERN"
+    ]
+  },
+  {
+    "code": "INTEGER",
+    "name": "Integer",
+    "validations": [
+      "REQUIRED",
+      "UNIQUE",
+      "MIN",
+      "MAX"
+    ]
+  },
+  {
+    "code": "LONG",
+    "name": "Long",
+    "validations": [
+      "REQUIRED",
+      "UNIQUE",
+      "MIN",
+      "MAX"
+    ]
+  },
+  {
+    "code": "BIG_DECIMAL",
+    "name": "BigDecimal",
+    "validations": [
+      "REQUIRED",
+      "UNIQUE",
+      "MIN",
+      "MAX"
+    ]
+  },
+  {
+    "code": "FLOAT",
+    "name": "Float",
+    "validations": [
+      "REQUIRED",
+      "UNIQUE",
+      "MIN",
+      "MAX"
+    ]
+  },
+  {
+    "code": "DOUBLE",
+    "name": "Double",
+    "validations": [
+      "REQUIRED",
+      "UNIQUE",
+      "MIN",
+      "MAX"
+    ]
+  },
+  {
+    "code": "ENUM",
+    "name": "Enum",
+    "validations": [
+      "REQUIRED",
+      "UNIQUE"
+    ]
+  },
+  {
+    "code": "BOOLEAN",
+    "name": "Boolean",
+    "validations": [
+      "REQUIRED",
+      "UNIQUE"
+    ]
+  },
+  {
+    "code": "LOCAL_DATE",
+    "name": "LocalDate",
+    "validations": [
+      "REQUIRED",
+      "UNIQUE"
+    ]
+  },
+  {
+    "code": "ZONED_DATE_TIME",
+    "name": "ZonedDateTime",
+    "validations": [
+      "REQUIRED",
+      "UNIQUE"
+    ]
+  },
+  {
+    "code": "DATE",
+    "name": "Date",
+    "validations": [
+      "REQUIRED",
+      "UNIQUE"
+    ]
+  },
+  {
+    "code": "BLOB",
+    "name": "Blob",
+    "validations": [
+      "REQUIRED",
+      "UNIQUE",
+      "MINBYTES",
+      "MAXBYTES"
+    ]
+  },
+  {
+    "code": "ANY_BLOB",
+    "name": "AnyBlob",
+    "validations": [
+      "REQUIRED",
+      "UNIQUE",
+      "MINBYTES",
+      "MAXBYTES"
+    ]
+  },
+  {
+    "code": "IMAGE_BLOB",
+    "name": "ImageBlob",
+    "validations": [
+      "REQUIRED",
+      "UNIQUE",
+      "MINBYTES",
+      "MAXBYTES"
+    ]
+  },
+  {
+    "code": "TEXT_BLOB",
+    "name": "TextBlob",
+    "validations": [
+      "REQUIRED",
+      "UNIQUE",
+      "MINBYTES",
+      "MAXBYTES"
+    ]
+  },
+  {
+    "code": "BYTE_BUFFER",
+    "name": "ByteBuffer",
+    "validations": [
+      "REQUIRED",
+      "UNIQUE",
+      "MINBYTES",
+      "MAXBYTES"
+    ]
+  },
+  {
+    "code": "UUID",
+    "name": "UUID",
+    "validations": [
+      "REQUIRED",
+      "UNIQUE"
+    ]
+  },
+  {
+    "code": "INSTANT",
+    "name": "Instant",
+    "validations": [
+      "REQUIRED",
+      "UNIQUE"
+    ]
+  },
+  {
+    "code": "DURATION",
+    "name": "Duration",
+    "validations": [
+      "REQUIRED",
+      "UNIQUE"
+    ]
+  }
+]
