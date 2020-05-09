@@ -277,9 +277,9 @@
   {
     "option": "uaaBaseName",
     "baseType": "STRING",
-    "parseType": "EnumLiteral",
+    "parseType": "String",
     "values": [
-      "\"uaa\""
+      "\"../uaa\""
     ],
     "description": "Mandatory for gateway and microservices if auth type is uaa, must be between double-quotes"
   },
