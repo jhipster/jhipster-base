@@ -2,7 +2,7 @@
   {
     "option": "dockerPushCommand",
     "baseType": "STRING",
-    "parseType": "AnyLiteral",
+    "parseType": "String",
     "values": [
       "\"docker push\""
     ],
@@ -20,7 +20,7 @@
   {
     "option": "serviceDiscoveryType",
     "baseType": "STRING",
-    "parseType": "Literal",
+    "parseType": "EnumLiteral",
     "values": [
       "eureka",
       "consul",
@@ -66,7 +66,7 @@
   {
     "option": "kubernetesServiceType",
     "baseType": "STRING",
-    "parseType": "Literal",
+    "parseType": "EnumLiteral",
     "values": [
       "LoadBalancer",
       "NodePort",
@@ -77,7 +77,7 @@
   {
     "option": "ingressDomain",
     "baseType": "STRING",
-    "parseType": "AnyLiteral",
+    "parseType": "String",
     "values": [
       "\"Ingress\""
     ],
@@ -93,7 +93,7 @@
   {
     "option": "deploymentType",
     "baseType": "STRING",
-    "parseType": "Literal",
+    "parseType": "EnumLiteral",
     "values": [
       "docker-compose",
       "kubernetes",
@@ -104,7 +104,7 @@
   {
     "option": "gatewayType",
     "baseType": "STRING",
-    "parseType": "Literal",
+    "parseType": "EnumLiteral",
     "values": [
       "zuul",
       "traefik"
@@ -114,7 +114,7 @@
   {
     "option": "directoryPath",
     "baseType": "STRING",
-    "parseType": "AnyLiteral",
+    "parseType": "String",
     "values": [
       "\"../\""
     ],
@@ -142,7 +142,7 @@
   {
     "option": "storageType",
     "baseType": "STRING",
-    "parseType": "Literal",
+    "parseType": "EnumLiteral",
     "values": [
       "ephemeral",
       "persistent"

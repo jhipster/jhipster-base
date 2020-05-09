@@ -2,127 +2,114 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "http://example.com/example.json",
     "type": "array",
-    "title": "The Root Schema",
+    "title": "The root schema",
     "description": "The root schema comprises the entire JSON document.",
     "default": [],
     "additionalItems": true,
     "items": {
         "$id": "#/items",
-        "type": "object",
-        "title": "The Items Schema",
-        "description": "An explanation about the purpose of this instance.",
-        "default": {},
-        "examples": [
+        "anyOf": [
             {
-                "option": "applicationType",
-                "baseType": "STRING",
-                "values": [
-                    "monolith",
-                    "microservice",
-                    "gateway",
-                    "uaa"
-                ],
-                "description": "",
-                "parseType": "Literal"
-            },
-            {
-                "values": [
-                    "Entity"
-                ],
-                "description": "Suffix for entities. false for empty string",
-                "parseType": "JavaIdentifierLiteral",
-                "option": "entitySuffix",
-                "baseType": "STRING"
-            },
-            {
-                "parseType": "Literal",
-                "option": "serviceDiscoveryType",
-                "baseType": "STRING",
-                "values": [
-                    "eureka",
-                    "consul",
-                    "no",
-                    "false"
-                ],
-                "description": ""
-            }
-        ],
-        "additionalProperties": true,
-        "required": [
-            "option",
-            "baseType",
-            "parseType",
-            "values",
-            "description"
-        ],
-        "properties": {
-            "option": {
-                "$id": "#/items/properties/option",
-                "type": "string",
-                "title": "The Option Schema",
+                "$id": "#/items/anyOf/0",
+                "type": "object",
+                "title": "The first anyOf schema",
                 "description": "An explanation about the purpose of this instance.",
-                "default": "",
+                "default": {},
                 "examples": [
-                    "applicationType"
-                ]
-            },
-            "baseType": {
-                "$id": "#/items/properties/baseType",
-                "type": "string",
-                "title": "The Basetype Schema",
-                "description": "An explanation about the purpose of this instance.",
-                "default": "",
-                "examples": [
-                    "STRING"
-                ]
-            },
-            "parseType": {
-                "$id": "#/items/properties/parseType",
-                "type": "string",
-                "title": "The Parsetype Schema",
-                "description": "An explanation about the purpose of this instance.",
-                "default": "",
-                "examples": [
-                    "Literal"
-                ]
-            },
-            "values": {
-                "$id": "#/items/properties/values",
-                "type": "array",
-                "title": "The Values Schema",
-                "description": "An explanation about the purpose of this instance.",
-                "default": [],
-                "examples": [
-                    [
-                        "monolith",
-                        "microservice",
-                        "gateway"
-                    ]
+                    {
+                        "option": "applicationType",
+                        "baseType": "STRING",
+                        "values": [
+                            "monolith",
+                            "microservice",
+                            "gateway",
+                            "uaa"
+                        ],
+                        "description": "One of the listed values",
+                        "parseType": "EnumLiteral"
+                    }
                 ],
-                "additionalItems": true,
-                "items": {
-                    "$id": "#/items/properties/values/items",
-                    "type": "string",
-                    "title": "The Items Schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": "",
-                    "examples": [
-                        "monolith",
-                        "microservice",
-                        "gateway"
-                    ]
+                "required": [
+                    "option",
+                    "baseType",
+                    "parseType",
+                    "values",
+                    "description"
+                ],
+                "additionalProperties": true,
+                "properties": {
+                    "option": {
+                        "$id": "#/items/anyOf/0/properties/option",
+                        "type": "string",
+                        "title": "The option schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "applicationType"
+                        ]
+                    },
+                    "baseType": {
+                        "$id": "#/items/anyOf/0/properties/baseType",
+                        "type": "string",
+                        "title": "The baseType schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "STRING"
+                        ]
+                    },
+                    "parseType": {
+                        "$id": "#/items/anyOf/0/properties/parseType",
+                        "type": "string",
+                        "title": "The parseType schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "EnumLiteral"
+                        ]
+                    },
+                    "values": {
+                        "$id": "#/items/anyOf/0/properties/values",
+                        "type": "array",
+                        "title": "The values schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": [],
+                        "examples": [
+                            [
+                                "monolith",
+                                "microservice"
+                            ]
+                        ],
+                        "additionalItems": true,
+                        "items": {
+                            "$id": "#/items/anyOf/0/properties/values/items",
+                            "anyOf": [
+                                {
+                                    "$id": "#/items/anyOf/0/properties/values/items/anyOf/0",
+                                    "type": "string",
+                                    "title": "The first anyOf schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "monolith",
+                                        "microservice"
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    "description": {
+                        "$id": "#/items/anyOf/0/properties/description",
+                        "type": "string",
+                        "title": "The description schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "One of the listed values"
+                        ]
+                    }
                 }
-            },
-            "description": {
-                "$id": "#/items/properties/description",
-                "type": "string",
-                "title": "The Description Schema",
-                "description": "An explanation about the purpose of this instance.",
-                "default": "",
-                "examples": [
-                    ""
-                ]
             }
-        }
+        ]
     }
 }

@@ -2,14 +2,14 @@
   {
     "option": "applicationType",
     "baseType": "STRING",
-    "parseType": "Literal",
+    "parseType": "EnumLiteral",
     "values": [
       "monolith",
       "microservice",
       "gateway",
       "uaa"
     ],
-    "description": ""
+    "description": "One of the listed values"
   },
   {
     "option": "blueprints",
@@ -19,7 +19,7 @@
       "generator-jhipster-vuejs",
       "generator-jhipster-dotnetcore"
     ],
-    "description": ""
+    "description": "[generator-jhipster-vuejs] or [generator-jhipster-vuejs, generator-jhipster-dotnetcore]"
   },
   {
     "option": "entitySuffix",
@@ -33,19 +33,19 @@
   {
     "option": "serviceDiscoveryType",
     "baseType": "STRING",
-    "parseType": "Literal",
+    "parseType": "EnumLiteral",
     "values": [
       "eureka",
       "consul",
       "no",
       "false"
     ],
-    "description": ""
+    "description": "One of the listed values"
   },
   {
     "option": "devDatabaseType",
     "baseType": "STRING",
-    "parseType": "Literal",
+    "parseType": "EnumLiteral",
     "values": [
       "h2Disk",
       "h2Memory",
@@ -59,7 +59,7 @@
       "cassandra",
       "couchbase"
     ],
-    "description": "* + the prod database type"
+    "description": "One of the listed values or one of the prod database type"
   },
   {
     "option": "testFrameworks",
@@ -79,7 +79,7 @@
     "values": [
       "primary"
     ],
-    "description": "You can put whatever value you want, provided you know it will work (like dark, or light), can also be empty"
+    "description": "You can put whatever value you want, provided you know it will work (like dark, or light)"
   },
   {
     "option": "dtoSuffix",
@@ -97,7 +97,7 @@
     "values": [
       "en"
     ],
-    "description": ""
+    "description": "One of the languages as ISO code supported by JHipster"
   },
   {
     "option": "jwtSecretKey",
@@ -124,22 +124,22 @@
     "values": [
       "false"
     ],
-    "description": ""
+    "description": "true or false"
   },
   {
     "option": "messageBroker",
     "baseType": "STRING",
-    "parseType": "Literal",
+    "parseType": "EnumLiteral",
     "values": [
       "kafka",
       "false"
     ],
-    "description": ""
+    "description": "One of the listed values"
   },
   {
     "option": "cacheProvider",
     "baseType": "STRING",
-    "parseType": "Literal",
+    "parseType": "EnumLiteral",
     "values": [
       "ehcache",
       "hazelcast",
@@ -149,12 +149,12 @@
       "redis",
       "no"
     ],
-    "description": "ehcache for monoliths and gateways, hazelcast otherwise"
+    "description": "One of the listed values, ehcache for monoliths and gateways, hazelcast otherwise"
   },
   {
     "option": "websocket",
     "baseType": "STRING",
-    "parseType": "Literal",
+    "parseType": "EnumLiteral",
     "values": [
       "spring-websocket",
       "false"
@@ -164,12 +164,12 @@
   {
     "option": "buildTool",
     "baseType": "STRING",
-    "parseType": "Literal",
+    "parseType": "EnumLiteral",
     "values": [
       "maven",
       "gradle"
     ],
-    "description": ""
+    "description": "One of the listed values or one of the prod database type"
   },
   {
     "option": "packageName",
@@ -181,7 +181,7 @@
   {
     "option": "prodDatabaseType",
     "baseType": "STRING",
-    "parseType": "Literal",
+    "parseType": "EnumLiteral",
     "values": [
       "mysql",
       "mariadb",
@@ -193,7 +193,7 @@
       "cassandra",
       "couchbase"
     ],
-    "description": ""
+    "description": "One of the listed values or one of the prod database type"
   },
   {
     "option": "baseName",
@@ -235,12 +235,12 @@
   {
     "option": "searchEngine",
     "baseType": "STRING",
-    "parseType": "Literal",
+    "parseType": "EnumLiteral",
     "values": [
       "elasticsearch",
       "false"
     ],
-    "description": ""
+    "description": "One of the listed values or one of the prod database type"
   },
   {
     "option": "jhiPrefix",
@@ -254,17 +254,17 @@
   {
     "option": "clientPackageManager",
     "baseType": "STRING",
-    "parseType": "Literal",
+    "parseType": "EnumLiteral",
     "values": [
       "npm",
       "yarn"
     ],
-    "description": ""
+    "description": "One of the listed values or one of the prod database type"
   },
   {
     "option": "databaseType",
     "baseType": "STRING",
-    "parseType": "Literal",
+    "parseType": "EnumLiteral",
     "values": [
       "sql",
       "mongodb",
@@ -272,14 +272,14 @@
       "couchbase",
       "no"
     ],
-    "description": ""
+    "description": "One of the listed values or one of the prod database type"
   },
   {
     "option": "uaaBaseName",
     "baseType": "STRING",
-    "parseType": "Literal",
+    "parseType": "String",
     "values": [
-      "\"uaa\""
+      "\"../uaa\""
     ],
     "description": "Mandatory for gateway and microservices if auth type is uaa, must be between double-quotes"
   },
@@ -290,7 +290,7 @@
     "values": [
       "false"
     ],
-    "description": ""
+    "description": "true or false"
   },
   {
     "option": "enableSwaggerCodegen",
@@ -299,7 +299,7 @@
     "values": [
       "false"
     ],
-    "description": ""
+    "description": "true or false"
   },
   {
     "option": "skipServer",
@@ -308,17 +308,17 @@
     "values": [
       "false"
     ],
-    "description": ""
+    "description": "true or false"
   },
   {
     "option": "clientFramework",
     "baseType": "STRING",
-    "parseType": "Literal",
+    "parseType": "EnumLiteral",
     "values": [
       "angularX",
       "react"
     ],
-    "description": ""
+    "description": "One of the listed values or one of the prod database type"
   },
   {
     "option": "enableHibernateCache",
@@ -327,19 +327,19 @@
     "values": [
       "true"
     ],
-    "description": ""
+    "description": "true or false"
   },
   {
     "option": "useSass",
     "baseType": "BOOLEAN",
     "parseType": "Boolean",
     "values": [],
-    "description": ""
+    "description": "true or false"
   },
   {
     "option": "authenticationType",
     "baseType": "STRING",
-    "parseType": "Literal",
+    "parseType": "EnumLiteral",
     "values": [
       "jwt",
       "uaa",
