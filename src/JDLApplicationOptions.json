@@ -14,12 +14,12 @@
   {
     "option": "blueprints",
     "baseType": "STRING",
-    "parseType": "ListOfLiterals",
+    "parseType": "ListOfAnyLiterals",
     "values": [
-      "generator-jhipster-vuejs",
-      "generator-jhipster-dotnetcore"
+    	"vuejs", 
+    	"generator-jhipster-dotnetcore"
     ],
-    "description": "[generator-jhipster-vuejs] or [generator-jhipster-vuejs, generator-jhipster-dotnetcore]"
+    "description": "Any blueprint identifier e.g. [vuejs] or [vuejs, generator-jhipster-dotnetcore]. Please note that the prefix 'generator-jhipster-' is optional."
   },
   {
     "option": "entitySuffix",
