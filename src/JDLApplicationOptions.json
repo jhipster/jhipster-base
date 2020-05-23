@@ -16,10 +16,10 @@
     "baseType": "STRING",
     "parseType": "ListOfLiterals",
     "values": [
-      "generator-jhipster-vuejs",
+      "vuejs",
       "generator-jhipster-dotnetcore"
     ],
-    "description": "[generator-jhipster-vuejs] or [generator-jhipster-vuejs, generator-jhipster-dotnetcore]"
+    "description": "[vuejs] or [vuejs, generator-jhipster-dotnetcore]"
   },
   {
     "option": "entitySuffix",
