@@ -12,6 +12,17 @@
     "description": "One of the listed values"
   },
   {
+    "option": "blueprints",
+    "baseType": "STRING",
+    "parseType": "ListOfAnyLiterals",
+    "values": [
+    	"vuejs", 
+    	"generator-jhipster-dotnetcore",
+    	"any-blueprint-from-marketplace"
+    ],
+    "description": "Any blueprint identifier e.g. [vuejs] or [vuejs, generator-jhipster-dotnetcore]. Please note that the prefix 'generator-jhipster-' is optional."
+  },
+  {
     "option": "entitySuffix",
     "baseType": "STRING",
     "parseType": "JavaIdentifierLiteral",
