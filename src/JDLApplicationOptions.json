@@ -16,7 +16,7 @@
     "baseType": "STRING",
     "parseType": "ListOfAnyLiterals",
     "values": [
-    	"vuejs", 
+    	"vuejs",
     	"generator-jhipster-dotnetcore",
     	"any-blueprint-from-marketplace"
     ],
@@ -258,8 +258,7 @@
     "baseType": "STRING",
     "parseType": "EnumLiteral",
     "values": [
-      "npm",
-      "yarn"
+      "npm"
     ],
     "description": "One of the listed values"
   },
