@@ -17,7 +17,8 @@
     "parseType": "ListOfAnyLiterals",
     "values": [
     	"vuejs", 
-    	"generator-jhipster-dotnetcore"
+    	"generator-jhipster-dotnetcore",
+    	"any-blueprint-from-marketplace"
     ],
     "description": "Any blueprint identifier e.g. [vuejs] or [vuejs, generator-jhipster-dotnetcore]. Please note that the prefix 'generator-jhipster-' is optional."
   },
@@ -169,7 +170,7 @@
       "maven",
       "gradle"
     ],
-    "description": "One of the listed values or one of the prod database type"
+    "description": "One of the listed values"
   },
   {
     "option": "packageName",
@@ -193,7 +194,7 @@
       "cassandra",
       "couchbase"
     ],
-    "description": "One of the listed values or one of the prod database type"
+    "description": "One of the listed values"
   },
   {
     "option": "baseName",
@@ -241,7 +242,7 @@
       "couchbase",
       "false"
     ],
-    "description": "One of the listed values or one of the prod database type"
+    "description": "One of the listed values"
   },
   {
     "option": "jhiPrefix",
@@ -260,7 +261,7 @@
       "npm",
       "yarn"
     ],
-    "description": "One of the listed values or one of the prod database type"
+    "description": "One of the listed values"
   },
   {
     "option": "databaseType",
@@ -318,9 +319,10 @@
     "parseType": "EnumLiteral",
     "values": [
       "angularX",
-      "react"
+      "react",
+      "vuejs"
     ],
-    "description": "One of the listed values or one of the prod database type"
+    "description": "One of the listed values"
   },
   {
     "option": "enableHibernateCache",
