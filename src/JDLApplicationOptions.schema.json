@@ -14,8 +14,7 @@
                 "values": [
                     "monolith",
                     "microservice",
-                    "gateway",
-                    "uaa"
+                    "gateway"
                 ],
                 "description": "One of the listed values"
             },
@@ -48,8 +47,7 @@
                         "values": [
                             "monolith",
                             "microservice",
-                            "gateway",
-                            "uaa"
+                            "gateway"
                         ],
                         "description": "One of the listed values"
                     }

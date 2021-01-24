@@ -6,8 +6,7 @@
     "values": [
       "monolith",
       "microservice",
-      "gateway",
-      "uaa"
+      "gateway"
     ],
     "description": "One of the listed values"
   },
@@ -277,15 +276,6 @@
     "description": "One of the listed values or one of the prod database type"
   },
   {
-    "option": "uaaBaseName",
-    "baseType": "STRING",
-    "parseType": "String",
-    "values": [
-      "\"../uaa\""
-    ],
-    "description": "Mandatory for gateway and microservices if auth type is uaa, must be between double-quotes"
-  },
-  {
     "option": "reactive",
     "baseType": "BOOLEAN",
     "parseType": "Boolean",
@@ -345,11 +335,10 @@
     "parseType": "EnumLiteral",
     "values": [
       "jwt",
-      "uaa",
       "session",
       "oauth2"
     ],
-    "description": "uaa for UAA apps, jwt otherwise"
+    "description": "One of the listed values"
   },
   {
     "option": "clientTheme",
