@@ -29,7 +29,6 @@
             }
         ]
     ],
-    "additionalItems": true,
     "items": {
         "anyOf": [
             {
@@ -58,7 +57,6 @@
                     "values",
                     "description"
                 ],
-                "additionalProperties": true,
                 "properties": {
                     "option": {
                         "$id": "#/items/anyOf/0/properties/option",
@@ -102,7 +100,6 @@
                                 "microservice"
                             ]
                         ],
-                        "additionalItems": true,
                         "items": {
                             "anyOf": [
                                 {

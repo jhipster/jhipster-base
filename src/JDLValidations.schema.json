@@ -5,7 +5,6 @@
     "title": "The Root Schema",
     "description": "The root schema comprises the entire JSON document.",
     "default": [],
-    "additionalItems": true,
     "items": {
         "$id": "#/items",
         "type": "object",
@@ -35,7 +34,6 @@
                 "valueIsRequired": true
             }
         ],
-        "additionalProperties": true,
         "required": [
             "code",
             "name",

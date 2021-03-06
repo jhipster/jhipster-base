@@ -5,7 +5,6 @@
     "title": "The root schema",
     "description": "The root schema comprises the entire JSON document.",
     "default": [],
-    "additionalItems": true,
     "items": {
         "$id": "#/items",
         "anyOf": [
@@ -33,7 +32,6 @@
                     "values",
                     "description"
                 ],
-                "additionalProperties": true,
                 "properties": {
                     "option": {
                         "$id": "#/items/anyOf/0/properties/option",
@@ -76,7 +74,6 @@
                                 "\"docker push\""
                             ]
                         ],
-                        "additionalItems": true,
                         "items": {
                             "$id": "#/items/anyOf/0/properties/values/items",
                             "anyOf": [
