@@ -44,6 +44,7 @@
                 ]
             }
         ],
+        "additionalProperties": true,
         "required": [
             "code",
             "name",

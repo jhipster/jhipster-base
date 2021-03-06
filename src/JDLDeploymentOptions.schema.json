@@ -32,6 +32,7 @@
                     "values",
                     "description"
                 ],
+                "additionalProperties": true,
                 "properties": {
                     "option": {
                         "$id": "#/items/anyOf/0/properties/option",

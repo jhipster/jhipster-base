@@ -43,6 +43,7 @@
                 "description": ""
             }
         ],
+        "additionalProperties": true,
         "required": [
             "option",
             "baseType",
