@@ -106,8 +106,7 @@
     "baseType": "STRING",
     "parseType": "EnumLiteral",
     "values": [
-      "SpringCloudGateway",
-      "traefik"
+      "SpringCloudGateway"
     ],
     "description": "Value is ignored when serviceDiscoveryType is `no`"
   },
