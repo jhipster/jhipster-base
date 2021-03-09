@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 files=$(find src -name *.json ! -path "*.schema.*" | awk -F/ '{ print $NF }' | cut -d '.' -f 1)
 
 for f in $files
