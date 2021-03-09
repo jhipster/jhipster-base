@@ -337,7 +337,7 @@
       "session",
       "oauth2"
     ],
-    "description": "One of the listed values"
+    "description": "Authentication Type"
   },
   {
     "option": "clientTheme",
