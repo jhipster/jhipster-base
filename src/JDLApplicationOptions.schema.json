@@ -29,7 +29,6 @@
             }
         ]
     ],
-    "additionalItems": true,
     "items": {
         "anyOf": [
             {
@@ -102,7 +101,6 @@
                                 "microservice"
                             ]
                         ],
-                        "additionalItems": true,
                         "items": {
                             "anyOf": [
                                 {
