@@ -75,6 +75,13 @@
     "description": "Applicable only when deploymentType is kubernetes"
   },
   {
+    "option": "kubernetesStorageClassName",
+    "baseType": "STRING",
+    "parseType": "String",
+    "values": [],
+    "description": "Applicable only when deploymentType is kubernetes, can be left empty (two double-quotes)"
+  },
+  {
     "option": "ingressDomain",
     "baseType": "STRING",
     "parseType": "String",
