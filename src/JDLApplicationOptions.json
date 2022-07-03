@@ -67,6 +67,7 @@
     "values": [
       "protractor",
       "cucumber",
+      "cypress",
       "gatling"
     ],
     "description": "Braces mandatory"
