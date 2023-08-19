@@ -22,8 +22,8 @@
     "baseType": "STRING",
     "parseType": "EnumLiteral",
     "values": [
-      "eureka",
       "consul",
+      "eureka",
       "no"
     ],
     "description": ""
